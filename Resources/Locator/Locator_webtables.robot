@@ -21,7 +21,7 @@ ${TABLE_CELLS}          xpath=//div[@role='gridcell']
 
 *** Keywords ***
 # Abre el navegador y maximiza la ventana
-Open Browser To Radio Button Page
+Open Browser To web table Page
     Open Browser    ${PAGE_URL}    Chrome
     Maximize Browser Window
     # Elimina el anuncio inferior 
