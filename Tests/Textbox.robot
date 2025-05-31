@@ -1,6 +1,6 @@
 *** Settings ***
 # Documentación de la prueba para interactuar con text box
-Documentation    Prueba para interactuar con los radio buttons en demoqa.com
+Documentation    Prueba para interactuar con los text box en demoqa.com
 # Importa librerías necesarias
 Library    SeleniumLibrary
 Library    DataDriver    file=../Resources/Data/textbox_data.csv   
@@ -22,7 +22,7 @@ Test Text Box ${Caso}
 Test Text Box Submission
     [Arguments]      ${Full_Name}    ${Email}    ${Current_Address}    ${Permanent_Address}    ${Esperado_Name}    ${Esperado_Email}    ${Esperado_Current_Address}    ${Esperado_Permanent_Address}  ${Caso}
     # Abre la página
-    Open Browser To Radio Button Page
+    Open Browser To Text Box Page
     # Completa el formulario y hace submit
     Fill Text Box Form     ${Full_Name}    ${Email}    ${Current_Address}    ${Permanent_Address}   ${Caso}
     # Verifica los resultados y captura de pantalla
