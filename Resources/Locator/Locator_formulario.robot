@@ -1,5 +1,5 @@
 *** Variables ***
-# URL de la página de web tables
+# URL de la página de  Formulario
 ${FORM_URL}         https://demoqa.com/automation-practice-form
 # Directorio para capturas de pantalla
 ${SCREENSHOT_DIR}   ../../Results/Screenshots/Formulario
