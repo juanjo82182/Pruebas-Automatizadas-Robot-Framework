@@ -1,0 +1,3199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-05-31T01:20:43.339101" rpa="false" schemaversion="5">
+<suite id="s1" name="Webtables" source="C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Tests\Webtables.robot">
+<test id="s1-t1" name="Test Web Table Caso 1" line="18">
+<msg time="2025-05-31T01:20:47.236565" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Web Table Interaction">
+<kw name="Open Browser To Radio Button Page" owner="Locator_webtables">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:20:47.246576" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/webtables'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T01:20:47.244563" elapsed="36.326964"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T01:21:23.574530" elapsed="0.356275"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:23.932808" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:21:23.931806" elapsed="0.087083"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:24.019893" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.019893" elapsed="0.325079"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:20:47.244563" elapsed="37.100409"/>
+</kw>
+<kw name="Interact With WebTables" owner="keywords_webtables">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${parameters_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.349966" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:21:24.349966" level="INFO">${params} = John,Doe,30,john.doe@example.com,5000,IT</msg>
+<var>${params}</var>
+<arg>isinstance($parameters_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($parameters_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${parameters_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.346974" elapsed="0.003997"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${expected_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.351970" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:21:24.352968" level="INFO">${expected} = John,Doe,30,john.doe@example.com,5000,IT</msg>
+<var>${expected}</var>
+<arg>isinstance($expected_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($expected_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${expected_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.350971" elapsed="0.001997"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:21:24.353982" level="INFO">${params} = ['John', 'Doe', '30', 'john.doe@example.com', '5000', 'IT']</msg>
+<var>${params}</var>
+<arg>${params}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.352968" elapsed="0.001014"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:21:24.353982" level="INFO">${expected} = ['John', 'Doe', '30', 'john.doe@example.com', '5000', 'IT']</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.353982" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Add New Row" owner="keywords_webtables">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:24.358615" level="INFO">Clicking element 'xpath=//*[@id="addNewRecordButton"]'.</msg>
+<arg>${ADD_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.356988" elapsed="1.026087"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:25.413073" level="INFO">Typing text 'John' into text field 'xpath= //*[@id="firstName"]'.</msg>
+<arg>${INPUT_FIRST_NAME}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:25.384077" elapsed="0.603763"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:25.988842" level="INFO">Typing text 'Doe' into text field 'xpath=//*[@id="lastName"]'.</msg>
+<arg>${INPUT_LAST_NAME}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:25.987840" elapsed="0.435256"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:26.424095" level="INFO">Typing text 'john.doe@example.com' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:26.424095" elapsed="0.992662"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:27.417426" level="INFO">Typing text '30' into text field 'xpath=//*[@id="age"]'.</msg>
+<arg>${INPUT_AGE}</arg>
+<arg>${age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:27.416757" elapsed="0.282616"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:27.699950" level="INFO">Typing text '5000' into text field 'xpath=//*[@id="salary"]'.</msg>
+<arg>${INPUT_SALARY}</arg>
+<arg>${salary}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:27.699950" elapsed="0.307096"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.008048" level="INFO">Typing text 'IT' into text field 'xpath=//*[@id="department"]'.</msg>
+<arg>${INPUT_DEPARTMENT}</arg>
+<arg>${department}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.007046" elapsed="0.276764"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.284827" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.283810" elapsed="0.273236"/>
+</kw>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<status status="PASS" start="2025-05-31T01:21:24.354983" elapsed="4.202063"/>
+</kw>
+<arg>'${action}' == 'add'</arg>
+<arg>Add New Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'edit'</arg>
+<arg>Edit Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>${params}[6]</arg>
+<arg>${params}[7]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete'</arg>
+<arg>Delete Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'search'</arg>
+<arg>Search Table</arg>
+<arg>${params}[0]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:24.354983" elapsed="4.202063"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T01:21:28.708913" level="INFO" html="true">&lt;a href="Results/Screenshots/WebTables/WebTable_Caso%201.png"&gt;&lt;img src="Results/Screenshots/WebTables/WebTable_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/WebTable_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T01:21:28.559045" elapsed="0.149868"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Verify Row Exists" owner="keywords_webtables">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.756018" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.130")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.711924" elapsed="0.044094"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:21:28.757018" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.756018" elapsed="0.001000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.805886" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.140")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.758624" elapsed="0.047262"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.850537" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.806886" elapsed="0.043651"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.915829" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.851538" elapsed="0.065296"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:28.982393" level="INFO">${a} = 39</msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.916834" elapsed="0.065559"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.032748" level="INFO">${e} = cierra@example.com</msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.982393" elapsed="0.050355"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.054008" level="INFO">${s} = 10000</msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.032748" elapsed="0.021260"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.089791" level="INFO">${d} = Insurance</msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.054008" elapsed="0.035783"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}' and '${a}' == '${age}' and '${e}' == '${email}' and '${s}' == '${salary}' and '${d}' == '${department}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.091384" elapsed="0.001011"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:21:29.092395" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.092395" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.130")&gt;</var>
+<status status="PASS" start="2025-05-31T01:21:28.757613" elapsed="0.335782"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.114607" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.141")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.093395" elapsed="0.021212"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.150800" level="INFO">${fn} = Alden</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.114607" elapsed="0.036193"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.166599" level="INFO">${ln} = Cantrell</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.150800" elapsed="0.015799"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.201650" level="INFO">${a} = 45</msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.166599" elapsed="0.035051"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.227558" level="INFO">${e} = alden@example.com</msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.202647" elapsed="0.024911"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.245159" level="INFO">${s} = 12000</msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.227558" elapsed="0.017601"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.275992" level="INFO">${d} = Compliance</msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.246165" elapsed="0.030844"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}' and '${a}' == '${age}' and '${e}' == '${email}' and '${s}' == '${salary}' and '${d}' == '${department}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.277009" elapsed="0.001616"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:21:29.279637" level="INFO">${index} = 3</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.278625" elapsed="0.001012"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.131")&gt;</var>
+<status status="PASS" start="2025-05-31T01:21:29.093395" elapsed="0.186242"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.305621" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.142")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.280635" elapsed="0.024986"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.332538" level="INFO">${fn} = Kierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.305621" elapsed="0.026917"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.348112" level="INFO">${ln} = Gentry</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.333542" elapsed="0.014570"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.380692" level="INFO">${a} = 29</msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.349114" elapsed="0.031578"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.396784" level="INFO">${e} = kierra@example.com</msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.381413" elapsed="0.015371"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.440879" level="INFO">${s} = 2000</msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.397370" elapsed="0.043509"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.466206" level="INFO">${d} = Legal</msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.440879" elapsed="0.025327"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}' and '${a}' == '${age}' and '${e}' == '${email}' and '${s}' == '${salary}' and '${d}' == '${department}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.467205" elapsed="0.000998"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:21:29.468861" level="INFO">${index} = 4</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.468861" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.132")&gt;</var>
+<status status="PASS" start="2025-05-31T01:21:29.279637" elapsed="0.189224"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.516460" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.143")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.469875" elapsed="0.046585"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.560342" level="INFO">${fn} = John</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.516460" elapsed="0.043882"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.609506" level="INFO">${ln} = Doe</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.561355" elapsed="0.048151"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.661637" level="INFO">${a} = 30</msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.609506" elapsed="0.052131"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.709030" level="INFO">${e} = john.doe@example.com</msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.661637" elapsed="0.047393"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.771831" level="INFO">${s} = 5000</msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.710026" elapsed="0.061805"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:29.811535" level="INFO">${d} = IT</msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.772828" elapsed="0.039710"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T01:21:29.813531" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.813531" elapsed="0.001001"/>
+</kw>
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}' and '${a}' == '${age}' and '${e}' == '${email}' and '${s}' == '${salary}' and '${d}' == '${department}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.812538" elapsed="0.002622"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-31T01:21:29.815160" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3ad5f0302e564603bf36bc94c4bff5d7", element="f.7BBF67311606893277127E6466A21726.d.00CA6F332714BE65C7146D66000E1F1E.e.133")&gt;</var>
+<status status="PASS" start="2025-05-31T01:21:29.469875" elapsed="0.345285"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:21:28.757018" elapsed="1.058142"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Fila no encontrada con los datos esperados</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-05-31T01:21:29.816171" elapsed="0.000000"/>
+</kw>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<status status="PASS" start="2025-05-31T01:21:28.710923" elapsed="1.105248"/>
+</kw>
+<arg>'${action}' == 'add' or '${action}' == 'edit'</arg>
+<arg>Verify Row Exists</arg>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete' and '${expected}[0]' == 'none'</arg>
+<arg>Verify Row Does Not Exist</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:21:28.709923" elapsed="1.106248"/>
+</kw>
+<arg>${Accion}</arg>
+<arg>${Parametros}</arg>
+<arg>${Resultado_Esperado}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-31T01:21:24.345968" elapsed="5.472204"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T01:21:34.821225" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T01:21:29.818172" elapsed="5.003053"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-31T01:21:34.825781" elapsed="8.459106"/>
+</kw>
+<arg>Caso=Caso 1</arg>
+<arg>Accion=add</arg>
+<arg>Parametros=John,Doe,30,john.doe@example.com,5000,IT</arg>
+<arg>Resultado_Esperado=John,Doe,30,john.doe@example.com,5000,IT</arg>
+<status status="PASS" start="2025-05-31T01:20:47.240699" elapsed="56.044188"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T01:21:43.359597" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Web Table Caso 1</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T01:21:43.288913" elapsed="0.071685"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:20:45.029678" elapsed="58.257220"/>
+</test>
+<test id="s1-t2" name="Test Web Table Caso 2" line="18">
+<msg time="2025-05-31T01:21:45.521712" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Web Table Interaction">
+<kw name="Open Browser To Radio Button Page" owner="Locator_webtables">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:21:45.527756" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/webtables'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T01:21:45.525743" elapsed="29.194636"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T01:22:14.720379" elapsed="0.303227"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.024608" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.023606" elapsed="0.069167"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.094770" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.093775" elapsed="0.015995"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:21:45.525743" elapsed="29.585029"/>
+</kw>
+<kw name="Interact With WebTables" owner="keywords_webtables">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${parameters_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.111770" elapsed="0.000997"/>
+</kw>
+<msg time="2025-05-31T01:22:15.112767" level="INFO">${params} = Cierra,Vega,Jane,Smith,35,jane.smith@example.com,6000,HR</msg>
+<var>${params}</var>
+<arg>isinstance($parameters_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($parameters_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${parameters_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.111770" elapsed="0.000997"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${expected_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.113767" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:22:15.113767" level="INFO">${expected} = Jane,Smith,35,jane.smith@example.com,6000,HR</msg>
+<var>${expected}</var>
+<arg>isinstance($expected_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($expected_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${expected_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.112767" elapsed="0.001000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:22:15.114767" level="INFO">${params} = ['Cierra', 'Vega', 'Jane', 'Smith', '35', 'jane.smith@example.com', '6000', 'HR']</msg>
+<var>${params}</var>
+<arg>${params}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.114767" elapsed="0.000000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:22:15.115770" level="INFO">${expected} = ['Jane', 'Smith', '35', 'jane.smith@example.com', '6000', 'HR']</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.114767" elapsed="0.001003"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Edit Row" owner="keywords_webtables">
+<kw name="Find Row By Name" owner="keywords_webtables">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.232839" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.103")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.121783" elapsed="0.111056"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:22:15.234348" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.233840" elapsed="0.000508"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.280684" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.113")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.235866" elapsed="0.044818"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.336170" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.280684" elapsed="0.055486"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.375121" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.336170" elapsed="0.038951"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:15.376122" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.376122" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:15.377119" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.377119" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:15.378121" level="INFO">${first_name} = Cierra</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.377119" elapsed="0.001002"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:15.378631" level="INFO">${last_name} = Vega</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.378121" elapsed="0.000510"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T01:22:15.379630" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${row}</arg>
+<arg>${index}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.379630" elapsed="0.000000"/>
+</kw>
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Return From Keyword</arg>
+<arg>${row}</arg>
+<arg>${index}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.378631" elapsed="0.000999"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-31T01:22:15.380628" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.103")&gt;</var>
+<status status="PASS" start="2025-05-31T01:22:15.235866" elapsed="0.144762"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:22:15.235866" elapsed="0.144762"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Fila no encontrada</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-05-31T01:22:15.380628" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:22:15.381628" level="INFO">${row} = &lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.103")&gt;</msg>
+<msg time="2025-05-31T01:22:15.381628" level="INFO">${index} = 1</msg>
+<var>${row}</var>
+<var>${index}</var>
+<arg>${target_first_name}</arg>
+<arg>${target_last_name}</arg>
+<status status="PASS" start="2025-05-31T01:22:15.119780" elapsed="0.261848"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:15.382628" level="INFO">Clicking element 'xpath=//*[@id="edit-record-1"]'.</msg>
+<arg>xpath=//*[@id="edit-record-${index}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.381628" elapsed="2.652585"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:18.035209" level="INFO">Typing text 'Jane' into text field 'xpath= //*[@id="firstName"]'.</msg>
+<arg>${INPUT_FIRST_NAME}</arg>
+<arg>${new_first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:18.034213" elapsed="0.466960"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:18.502173" level="INFO">Typing text 'Smith' into text field 'xpath=//*[@id="lastName"]'.</msg>
+<arg>${INPUT_LAST_NAME}</arg>
+<arg>${new_last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:18.501173" elapsed="0.357970"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:18.860134" level="INFO">Typing text '35' into text field 'xpath=//*[@id="age"]'.</msg>
+<arg>${INPUT_AGE}</arg>
+<arg>${new_age}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:18.859143" elapsed="0.340067"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:19.200209" level="INFO">Typing text 'jane.smith@example.com' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${new_email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:19.199210" elapsed="0.541905"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:19.742112" level="INFO">Typing text '6000' into text field 'xpath=//*[@id="salary"]'.</msg>
+<arg>${INPUT_SALARY}</arg>
+<arg>${new_salary}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:19.741115" elapsed="0.291938"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:20.036615" level="INFO">Typing text 'HR' into text field 'xpath=//*[@id="department"]'.</msg>
+<arg>${INPUT_DEPARTMENT}</arg>
+<arg>${new_department}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.035056" elapsed="0.296032"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:20.332084" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.331088" elapsed="0.364262"/>
+</kw>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>${params}[6]</arg>
+<arg>${params}[7]</arg>
+<status status="PASS" start="2025-05-31T01:22:15.116767" elapsed="5.579581"/>
+</kw>
+<arg>'${action}' == 'add'</arg>
+<arg>Add New Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'edit'</arg>
+<arg>Edit Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>${params}[6]</arg>
+<arg>${params}[7]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete'</arg>
+<arg>Delete Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'search'</arg>
+<arg>Search Table</arg>
+<arg>${params}[0]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:15.115770" elapsed="5.580578"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T01:22:20.878136" level="INFO" html="true">&lt;a href="Results/Screenshots/WebTables/WebTable_Caso%202.png"&gt;&lt;img src="Results/Screenshots/WebTables/WebTable_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/WebTable_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T01:22:20.697351" elapsed="0.180785"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Verify Row Exists" owner="keywords_webtables">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:20.919269" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.103")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.880777" elapsed="0.038492"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:22:20.920272" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.920272" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:20.942923" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.113")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.922912" elapsed="0.020011"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:20.975963" level="INFO">${fn} = Jane</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.943527" elapsed="0.033435"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:20.991967" level="INFO">${ln} = Smith</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.976962" elapsed="0.015005"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:21.027234" level="INFO">${a} = 35</msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.992965" elapsed="0.034269"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:21.071149" level="INFO">${e} = jane.smith@example.com</msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:21.027234" elapsed="0.043915"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:21.102994" level="INFO">${s} = 6000</msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:21.071149" elapsed="0.031845"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:21.118482" level="INFO">${d} = HR</msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:21.102994" elapsed="0.016502"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T01:22:21.120493" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T01:22:21.120493" elapsed="0.001001"/>
+</kw>
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}' and '${a}' == '${age}' and '${e}' == '${email}' and '${s}' == '${salary}' and '${d}' == '${department}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:21.119496" elapsed="0.001998"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-31T01:22:21.121494" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="86cb7bdbd54032e805226a3e1b939fdb", element="f.E0207A0B1FA5EE164B5203454543919C.d.76491BDFD0AEE11DF1B4F53B51210D00.e.103")&gt;</var>
+<status status="PASS" start="2025-05-31T01:22:20.922912" elapsed="0.198582"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:22:20.920272" elapsed="0.201222"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Fila no encontrada con los datos esperados</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-05-31T01:22:21.123129" elapsed="0.000000"/>
+</kw>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<status status="PASS" start="2025-05-31T01:22:20.879765" elapsed="0.243364"/>
+</kw>
+<arg>'${action}' == 'add' or '${action}' == 'edit'</arg>
+<arg>Verify Row Exists</arg>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete' and '${expected}[0]' == 'none'</arg>
+<arg>Verify Row Does Not Exist</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:20.879137" elapsed="0.243992"/>
+</kw>
+<arg>${Accion}</arg>
+<arg>${Parametros}</arg>
+<arg>${Resultado_Esperado}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-31T01:22:15.110772" elapsed="6.012357"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T01:22:26.150353" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T01:22:21.124140" elapsed="5.026213"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-31T01:22:26.150353" elapsed="5.672271"/>
+</kw>
+<arg>Caso=Caso 2</arg>
+<arg>Accion=edit</arg>
+<arg>Parametros=Cierra,Vega,Jane,Smith,35,jane.smith@example.com,6000,HR</arg>
+<arg>Resultado_Esperado=Jane,Smith,35,jane.smith@example.com,6000,HR</arg>
+<status status="PASS" start="2025-05-31T01:21:45.525743" elapsed="46.296881"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T01:22:31.895078" level="INFO" html="true">&lt;a href="recording_2.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_2.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Web Table Caso 2</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T01:22:31.824640" elapsed="0.070438"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:21:43.366597" elapsed="48.458043"/>
+</test>
+<test id="s1-t3" name="Test Web Table Caso 3" line="18">
+<msg time="2025-05-31T01:22:34.072514" level="INFO">Automatically setting a fps of 7.5</msg>
+<kw name="Test Web Table Interaction">
+<kw name="Open Browser To Radio Button Page" owner="Locator_webtables">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:34.082323" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/webtables'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T01:22:34.082323" elapsed="24.792007"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T01:22:58.874330" elapsed="0.379575"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.253905" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.253905" elapsed="0.071563"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.326469" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.325468" elapsed="0.100103"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:22:34.082323" elapsed="25.345355"/>
+</kw>
+<kw name="Interact With WebTables" owner="keywords_webtables">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${parameters_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.429695" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:22:59.429695" level="INFO">${params} = Alden,Cantrell</msg>
+<var>${params}</var>
+<arg>isinstance($parameters_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($parameters_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${parameters_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.427678" elapsed="0.002017"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${expected_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.429695" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:22:59.431448" level="INFO">${expected} = none</msg>
+<var>${expected}</var>
+<arg>isinstance($expected_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($expected_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${expected_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.429695" elapsed="0.001753"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:22:59.431448" level="INFO">${params} = ['Alden', 'Cantrell']</msg>
+<var>${params}</var>
+<arg>${params}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.431448" elapsed="0.000000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:22:59.433458" level="INFO">${expected} = ['none']</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.431448" elapsed="0.002010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Delete Row" owner="keywords_webtables">
+<kw name="Find Row By Name" owner="keywords_webtables">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.521532" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.86")&gt;, &lt;selenium.webdriv...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.435467" elapsed="0.086065"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:22:59.521532" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.521532" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.559200" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.96")&gt;, &lt;selenium.webdriv...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.522530" elapsed="0.036670"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.586827" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.561215" elapsed="0.025612"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.608979" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.586827" elapsed="0.022152"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.608979" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.608979" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.610989" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.610989" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.610989" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.610989" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.612739" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.610989" elapsed="0.001750"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Return From Keyword</arg>
+<arg>${row}</arg>
+<arg>${index}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.612739" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:22:59.612739" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.612739" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.86")&gt;</var>
+<status status="PASS" start="2025-05-31T01:22:59.522530" elapsed="0.090209"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.636741" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.103")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.614747" elapsed="0.021994"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.689874" level="INFO">${fn} = Alden</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.636741" elapsed="0.053133"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.715660" level="INFO">${ln} = Cantrell</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.689874" elapsed="0.025786"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.717674" level="INFO">${fn} = Alden</msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.715660" elapsed="0.002014"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.717674" level="INFO">${ln} = Cantrell</msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.717674" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.717674" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.717674" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:22:59.719690" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.717674" elapsed="0.002016"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T01:22:59.719690" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>${row}</arg>
+<arg>${index}</arg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.719690" elapsed="0.000000"/>
+</kw>
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Return From Keyword</arg>
+<arg>${row}</arg>
+<arg>${index}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.719690" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-31T01:22:59.721703" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.87")&gt;</var>
+<status status="PASS" start="2025-05-31T01:22:59.614747" elapsed="0.106956"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:22:59.522530" elapsed="0.199173"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>Fila no encontrada</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-05-31T01:22:59.721703" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:22:59.721703" level="INFO">${row} = &lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.87")&gt;</msg>
+<msg time="2025-05-31T01:22:59.721703" level="INFO">${index} = 2</msg>
+<var>${row}</var>
+<var>${index}</var>
+<arg>${first_name}</arg>
+<arg>${last_name}</arg>
+<status status="PASS" start="2025-05-31T01:22:59.435467" elapsed="0.286236"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:22:59.723714" level="INFO">Clicking element 'xpath=//*[@id="delete-record-2"]'.</msg>
+<arg>xpath=//*[@id="delete-record-${index}"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.721703" elapsed="2.472024"/>
+</kw>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<status status="PASS" start="2025-05-31T01:22:59.433458" elapsed="2.760269"/>
+</kw>
+<arg>'${action}' == 'add'</arg>
+<arg>Add New Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'edit'</arg>
+<arg>Edit Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>${params}[6]</arg>
+<arg>${params}[7]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete'</arg>
+<arg>Delete Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'search'</arg>
+<arg>Search Table</arg>
+<arg>${params}[0]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:22:59.433458" elapsed="2.760269"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T01:23:02.352578" level="INFO" html="true">&lt;a href="Results/Screenshots/WebTables/WebTable_Caso%203.png"&gt;&lt;img src="Results/Screenshots/WebTables/WebTable_Caso%203.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/WebTable_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T01:23:02.204843" elapsed="0.147735"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Verify Row Does Not Exist" owner="keywords_webtables">
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.392433" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.86")&gt;, &lt;selenium.webdriv...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.354591" elapsed="0.037842"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:23:02.394200" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.394200" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.435850" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.96")&gt;, &lt;selenium.webdriv...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.394200" elapsed="0.041650"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.481475" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.435850" elapsed="0.045625"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.497319" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.481475" elapsed="0.015844"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.497830" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.497830" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.497830" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.497830" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.497830" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.497830" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.499839" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.499839" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.499839" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:02.503882" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.501861" elapsed="0.002021"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.86")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:02.394200" elapsed="0.109682"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.519502" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.103")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.503882" elapsed="0.015620"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.537192" level="INFO">${fn} = Kierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.521265" elapsed="0.015927"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.563277" level="INFO">${ln} = Gentry</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.537192" elapsed="0.026085"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.563277" level="INFO">${fn} = Kierra</msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.563277" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.563277" level="INFO">${ln} = Gentry</msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.563277" elapsed="0.002014"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.565291" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.565291" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.565291" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.565291" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.565291" elapsed="0.002017"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:02.569074" level="INFO">${index} = 3</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.567308" elapsed="0.001766"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.87")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:02.503882" elapsed="0.065192"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.605137" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.118")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.569074" elapsed="0.036063"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.640900" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.605137" elapsed="0.035763"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.678715" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.640900" elapsed="0.037815"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.680476" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.678715" elapsed="0.001761"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.680476" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.680476" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.680476" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.680476" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.682489" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.680476" elapsed="0.002013"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.682489" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:02.682489" level="INFO">${index} = 4</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.682489" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.89")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:02.569074" elapsed="0.113415"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.712381" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.125")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.684506" elapsed="0.027875"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.750021" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.712381" elapsed="0.037640"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.759703" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.750021" elapsed="0.009682"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.759703" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.759703" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.759703" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.759703" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:02.759703" level="INFO">${index} = 5</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.90")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:02.684506" elapsed="0.075197"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.821300" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.132")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.061597"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.863048" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.821300" elapsed="0.041748"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.886565" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.863048" elapsed="0.023517"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.886565" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.886565" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.886565" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.886565" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.886565" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.886565" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:02.886565" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.886565" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.886565" elapsed="0.011991"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:02.898556" level="INFO">${index} = 6</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.898556" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.91")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:02.759703" elapsed="0.138853"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.928098" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.139")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.900503" elapsed="0.027595"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.949567" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.928098" elapsed="0.021469"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:02.998747" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.949567" elapsed="0.049180"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.000763" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.998747" elapsed="0.002016"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.000763" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.000763" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.000763" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.000763" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.002773" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.000763" elapsed="0.002010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.002773" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:03.002773" level="INFO">${index} = 7</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.002773" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.92")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:02.898556" elapsed="0.104217"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.044902" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.146")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.004782" elapsed="0.040120"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.084809" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.044902" elapsed="0.039907"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.116723" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.084809" elapsed="0.031914"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.116723" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.116723" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.116723" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.116723" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:03.116723" level="INFO">${index} = 8</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.93")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:03.004782" elapsed="0.111941"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.140858" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.153")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.024135"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.187081" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.140858" elapsed="0.046223"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.228825" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.187081" elapsed="0.041744"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.230839" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.230839" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.230839" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.230839" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.230839" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.230839" elapsed="0.002009"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.232848" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.232848" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.232848" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:03.232848" level="INFO">${index} = 9</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.232848" elapsed="0.002008"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.94")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:03.116723" elapsed="0.118133"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.252750" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.160")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.234856" elapsed="0.017894"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.272739" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.252750" elapsed="0.019989"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.292144" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.272739" elapsed="0.019405"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.292144" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.292144" elapsed="0.005113"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.297257" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.297257" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.297257" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.297257" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.297257" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.297257" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.299266" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:03.299266" level="INFO">${index} = 10</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.299266" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.95")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:03.234856" elapsed="0.064410"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.323493" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.167")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.301280" elapsed="0.022213"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.355136" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.325512" elapsed="0.029624"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:03.370868" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.355136" elapsed="0.015732"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.370868" level="INFO">${fn} = </msg>
+<var>${fn}</var>
+<arg>${fn}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.370868" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.370868" level="INFO">${ln} = </msg>
+<var>${ln}</var>
+<arg>${ln}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.370868" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.370868" level="INFO">${first_name} = Alden</msg>
+<var>${first_name}</var>
+<arg>${first_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.370868" elapsed="0.000000"/>
+</kw>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T01:23:03.370868" level="INFO">${last_name} = Cantrell</msg>
+<var>${last_name}</var>
+<arg>${last_name}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.370868" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${fn}' == '${first_name}' and '${ln}' == '${last_name}'</arg>
+<arg>Fail</arg>
+<arg>La fila aún existe</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.370868" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:23:03.370868" level="INFO">${index} = 11</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.370868" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="d2e72eea9354018fd6452345da957bfe", element="f.72803357A82D105809E72F33F170ED0A.d.2B9CE0DAE1888811105641E48FF0B624.e.117")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:03.301280" elapsed="0.069588"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:23:02.394200" elapsed="0.984292"/>
+</for>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<status status="PASS" start="2025-05-31T01:23:02.354591" elapsed="1.023901"/>
+</kw>
+<arg>'${action}' == 'add' or '${action}' == 'edit'</arg>
+<arg>Verify Row Exists</arg>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete' and '${expected}[0]' == 'none'</arg>
+<arg>Verify Row Does Not Exist</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:02.352578" elapsed="1.025914"/>
+</kw>
+<arg>${Accion}</arg>
+<arg>${Parametros}</arg>
+<arg>${Resultado_Esperado}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-31T01:22:59.427678" elapsed="3.950814"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T01:23:08.379060" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T01:23:03.378492" elapsed="5.000568"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-31T01:23:08.379060" elapsed="6.205887"/>
+</kw>
+<arg>Caso=Caso 3</arg>
+<arg>Accion=delete</arg>
+<arg>Parametros=Alden,Cantrell</arg>
+<arg>Resultado_Esperado=none</arg>
+<status status="PASS" start="2025-05-31T01:22:34.080309" elapsed="40.504638"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T01:23:14.626132" level="INFO" html="true">&lt;a href="recording_3.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_3.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Web Table Caso 3</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T01:23:14.586964" elapsed="0.039168"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:22:31.897091" elapsed="42.687856"/>
+</test>
+<test id="s1-t4" name="Test Web Table Caso 4" line="18">
+<msg time="2025-05-31T01:23:16.874033" level="INFO">Automatically setting a fps of 6.5</msg>
+<kw name="Test Web Table Interaction">
+<kw name="Open Browser To Radio Button Page" owner="Locator_webtables">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:16.880091" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/webtables'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T01:23:16.880091" elapsed="31.990098"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T01:23:48.871190" elapsed="0.406667"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:49.279095" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.277857" elapsed="0.076573"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:49.355432" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.354430" elapsed="0.024462"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:23:16.878064" elapsed="32.500828"/>
+</kw>
+<kw name="Interact With WebTables" owner="keywords_webtables">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${parameters_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.381888" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:23:49.381888" level="INFO">${params} = Cierra</msg>
+<var>${params}</var>
+<arg>isinstance($parameters_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($parameters_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${parameters_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.380888" elapsed="0.002001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${expected_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.383896" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-31T01:23:49.383896" level="INFO">${expected} = </msg>
+<var>${expected}</var>
+<arg>isinstance($expected_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($expected_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${expected_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.382889" elapsed="0.001007"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:23:49.384892" level="INFO">${params} = ['Cierra']</msg>
+<var>${params}</var>
+<arg>${params}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.383896" elapsed="0.000996"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:23:49.385888" level="INFO">${expected} = ['']</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.384892" elapsed="0.000996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Search Table" owner="keywords_webtables">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:49.388895" level="INFO">Typing text 'Cierra' into text field 'xpath=//*[@id="searchBox"]'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.387889" elapsed="0.749717"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:50.403022" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c5dc0f05fe40f313e043ee1a8f5c589b", element="f.74A9AADA6B3EB4490AEFACCA00AC8E66.d.8F06AC9D152CE06D654B89A7089B1A73.e.113")&gt;, &lt;selenium.webdri...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:50.137606" elapsed="0.266419"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:23:50.404025" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:23:50.404025" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T01:23:53.405689" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T01:23:50.405028" elapsed="3.000661"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.839719" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="c5dc0f05fe40f313e043ee1a8f5c589b", element="f.74A9AADA6B3EB4490AEFACCA00AC8E66.d.8F06AC9D152CE06D654B89A7089B1A73.e.124")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.406706" elapsed="0.434027"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.885480" level="INFO">${fn} = Cierra</msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.840733" elapsed="0.044747"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.901397" level="INFO">${ln} = Vega</msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.885480" elapsed="0.015917"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.916253" level="INFO">${a} = 39</msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.901397" elapsed="0.014856"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.943196" level="INFO">${e} = cierra@example.com</msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.916839" elapsed="0.026357"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.977766" level="INFO">${s} = 10000</msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.943861" elapsed="0.033905"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:23:53.996779" level="INFO">${d} = Insurance</msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.978768" elapsed="0.018011"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T01:23:53.998792" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.998792" elapsed="0.000000"/>
+</kw>
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:53.997798" elapsed="0.000994"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2025-05-31T01:23:53.999791" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="c5dc0f05fe40f313e043ee1a8f5c589b", element="f.74A9AADA6B3EB4490AEFACCA00AC8E66.d.8F06AC9D152CE06D654B89A7089B1A73.e.113")&gt;</var>
+<status status="PASS" start="2025-05-31T01:23:53.406706" elapsed="0.593085"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:23:53.405689" elapsed="0.594102"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<arg>No se encontro ninguna fila</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-05-31T01:23:53.999791" elapsed="0.001002"/>
+</kw>
+<arg>${params}[0]</arg>
+<status status="PASS" start="2025-05-31T01:23:49.387889" elapsed="4.612904"/>
+</kw>
+<arg>'${action}' == 'add'</arg>
+<arg>Add New Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'edit'</arg>
+<arg>Edit Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>${params}[6]</arg>
+<arg>${params}[7]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete'</arg>
+<arg>Delete Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'search'</arg>
+<arg>Search Table</arg>
+<arg>${params}[0]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:49.386893" elapsed="4.613900"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T01:23:54.215620" level="INFO" html="true">&lt;a href="Results/Screenshots/WebTables/WebTable_Caso%204.png"&gt;&lt;img src="Results/Screenshots/WebTables/WebTable_Caso%204.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/WebTable_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T01:23:54.007074" elapsed="0.208546"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${action}' == 'add' or '${action}' == 'edit'</arg>
+<arg>Verify Row Exists</arg>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete' and '${expected}[0]' == 'none'</arg>
+<arg>Verify Row Does Not Exist</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:23:54.217199" elapsed="0.001013"/>
+</kw>
+<arg>${Accion}</arg>
+<arg>${Parametros}</arg>
+<arg>${Resultado_Esperado}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-31T01:23:49.379892" elapsed="4.838320"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T01:23:59.226008" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T01:23:54.218212" elapsed="5.007796"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-31T01:23:59.237647" elapsed="5.666342"/>
+</kw>
+<arg>Caso=Caso 4</arg>
+<arg>Accion=search</arg>
+<arg>Parametros=Cierra</arg>
+<arg>Resultado_Esperado=</arg>
+<status status="PASS" start="2025-05-31T01:23:16.878064" elapsed="48.027950"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T01:24:05.017239" level="INFO" html="true">&lt;a href="recording_4.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_4.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Web Table Caso 4</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T01:24:04.906014" elapsed="0.113242"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:23:14.630158" elapsed="50.275856"/>
+</test>
+<test id="s1-t5" name="Test Web Table Caso 5(Debe Fallar)" line="18">
+<msg time="2025-05-31T01:24:07.133862" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Web Table Interaction">
+<kw name="Open Browser To Radio Button Page" owner="Locator_webtables">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:07.139900" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/webtables'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T01:24:07.137890" elapsed="27.088295"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.227184" elapsed="0.276206"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:34.504404" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.503390" elapsed="0.083008"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:34.588397" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.587398" elapsed="0.033210"/>
+</kw>
+<status status="PASS" start="2025-05-31T01:24:07.137890" elapsed="27.483717"/>
+</kw>
+<kw name="Interact With WebTables" owner="keywords_webtables">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${parameters_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.624606" elapsed="0.001000"/>
+</kw>
+<msg time="2025-05-31T01:24:34.625606" level="INFO">${params} = XYZ</msg>
+<var>${params}</var>
+<arg>isinstance($parameters_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($parameters_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${parameters_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.623605" elapsed="0.002001"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>${expected_str}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.626605" elapsed="0.001004"/>
+</kw>
+<msg time="2025-05-31T01:24:34.627609" level="INFO">${expected} = </msg>
+<var>${expected}</var>
+<arg>isinstance($expected_str, list)</arg>
+<arg>Evaluate</arg>
+<arg>','.join($expected_str)</arg>
+<arg>ELSE</arg>
+<arg>Set Variable</arg>
+<arg>${expected_str}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.626605" elapsed="0.001004"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:24:34.629603" level="INFO">${params} = ['XYZ']</msg>
+<var>${params}</var>
+<arg>${params}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.629603" elapsed="0.000000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T01:24:34.642604" level="INFO">${expected} = ['']</msg>
+<var>${expected}</var>
+<arg>${expected}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.630604" elapsed="0.012000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Search Table" owner="keywords_webtables">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:34.645604" level="INFO">Typing text 'XYZ' into text field 'xpath=//*[@id="searchBox"]'.</msg>
+<arg>${SEARCH_BOX}</arg>
+<arg>${search_term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:34.644602" elapsed="1.255289"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:35.937233" level="INFO">${rows} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.89")&gt;, &lt;selenium.webdriv...</msg>
+<var>${rows}</var>
+<arg>${TABLE_ROWS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:35.899891" elapsed="0.037342"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T01:24:35.939253" level="INFO">${index} = 1</msg>
+<var>${index}</var>
+<arg>1</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T01:24:35.937233" elapsed="0.002020"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T01:24:38.939454" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T01:24:35.939253" elapsed="3.000201"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:38.965259" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.99")&gt;, &lt;selenium.webdriv...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:38.940466" elapsed="0.024793"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.030243" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:38.965259" elapsed="0.064984"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.069045" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.030243" elapsed="0.038802"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.111995" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.070045" elapsed="0.041950"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.140291" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.111995" elapsed="0.028296"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.160624" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.141291" elapsed="0.019333"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.193453" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.160624" elapsed="0.032829"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.193453" elapsed="0.000997"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:39.195450" level="INFO">${index} = 2</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.194450" elapsed="0.001000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.89")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:38.940466" elapsed="0.254984"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.224535" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.106")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.196450" elapsed="0.028085"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.247679" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.225044" elapsed="0.022635"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.287810" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.248697" elapsed="0.039113"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.322185" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.287810" elapsed="0.035392"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.348266" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.323202" elapsed="0.025064"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.380593" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.349270" elapsed="0.031323"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.415402" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.381592" elapsed="0.033810"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.415402" elapsed="0.001837"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:39.419268" level="INFO">${index} = 3</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.418284" elapsed="0.000984"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.90")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:39.195450" elapsed="0.223818"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.458812" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.113")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.420256" elapsed="0.038556"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.481870" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.458812" elapsed="0.023058"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.512444" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.481870" elapsed="0.030574"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.527907" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.513443" elapsed="0.014464"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.561597" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.527907" elapsed="0.033690"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.607382" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.562602" elapsed="0.045736"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.654272" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.608338" elapsed="0.045934"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.654272" elapsed="0.001707"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:39.656995" level="INFO">${index} = 4</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.656995" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.91")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:39.419268" elapsed="0.237727"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.697946" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.120")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.667108" elapsed="0.030838"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.716477" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.697946" elapsed="0.018531"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.753314" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.717486" elapsed="0.036842"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.775302" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.754328" elapsed="0.020974"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.822473" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.776300" elapsed="0.046173"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.882872" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.822473" elapsed="0.060399"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:39.943080" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.882872" elapsed="0.060208"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.944080" elapsed="0.000617"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:39.945709" level="INFO">${index} = 5</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.944697" elapsed="0.001012"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.92")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:39.659003" elapsed="0.286706"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.042180" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.127")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:39.945709" elapsed="0.096471"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.075793" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.043184" elapsed="0.032609"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.247762" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.076792" elapsed="0.170970"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.347063" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.248663" elapsed="0.098400"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.499444" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.347063" elapsed="0.152381"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.643464" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.499444" elapsed="0.144020"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.669100" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.644076" elapsed="0.025024"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.669100" elapsed="0.000997"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:40.671096" level="INFO">${index} = 6</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.670097" elapsed="0.000999"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.93")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:39.945709" elapsed="0.725387"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.753136" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.134")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.672097" elapsed="0.081039"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.840249" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.753136" elapsed="0.087113"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.936056" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.841253" elapsed="0.094803"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:40.992449" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.936056" elapsed="0.056393"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:41.157616" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:40.993558" elapsed="0.164058"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:41.284266" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.158613" elapsed="0.125653"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:41.423895" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.284266" elapsed="0.140631"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.424897" elapsed="0.001000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:41.426898" level="INFO">${index} = 7</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.425897" elapsed="0.001001"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.94")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:40.671096" elapsed="0.755802"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:41.587222" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.141")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.427539" elapsed="0.159683"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:41.703546" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.587222" elapsed="0.116324"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:41.782784" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.703546" elapsed="0.079238"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.136244" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:41.782784" elapsed="0.354471"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.199947" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.137255" elapsed="0.063448"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.278831" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.200703" elapsed="0.079126"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.443870" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.279829" elapsed="0.164041"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.443870" elapsed="0.000999"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:42.445874" level="INFO">${index} = 8</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.445874" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.95")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:41.427539" elapsed="1.019329"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.524049" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.148")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.446868" elapsed="0.077181"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.644279" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.524049" elapsed="0.120230"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.754251" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.645276" elapsed="0.109974"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.862934" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.755250" elapsed="0.107684"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:42.926058" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.862934" elapsed="0.064136"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.073819" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:42.928069" elapsed="0.146766"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.128069" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.074835" elapsed="0.053234"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.128069" elapsed="0.000992"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:43.130061" level="INFO">${index} = 9</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.130061" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.96")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:42.446868" elapsed="0.683193"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.199095" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.155")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.131572" elapsed="0.067523"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.263342" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.199095" elapsed="0.064247"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.336545" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.263342" elapsed="0.073203"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.654634" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.336545" elapsed="0.318089"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.734158" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.655634" elapsed="0.079537"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.823113" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.735171" elapsed="0.087942"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.899735" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.823113" elapsed="0.076622"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.900735" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:43.901736" level="INFO">${index} = 10</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.901736" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.97")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:43.131062" elapsed="0.770674"/>
+</iter>
+<iter>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:43.955517" level="INFO">${cells} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.162")&gt;, &lt;selenium.webdri...</msg>
+<var>${cells}</var>
+<arg>xpath=(//div[@class='rt-tbody']//div[@role='row'])[${index}]//div[@role='gridcell']</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.903135" elapsed="0.052382"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:44.007104" level="INFO">${fn} =  </msg>
+<var>${fn}</var>
+<arg>${cells}[0]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:43.956510" elapsed="0.050594"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:44.068856" level="INFO">${ln} =  </msg>
+<var>${ln}</var>
+<arg>${cells}[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.007104" elapsed="0.061752"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:44.116054" level="INFO">${a} =  </msg>
+<var>${a}</var>
+<arg>${cells}[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.068856" elapsed="0.047198"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:44.181627" level="INFO">${e} =  </msg>
+<var>${e}</var>
+<arg>${cells}[3]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.117070" elapsed="0.064557"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:44.213759" level="INFO">${s} =  </msg>
+<var>${s}</var>
+<arg>${cells}[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.181627" elapsed="0.032132"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T01:24:44.251331" level="INFO">${d} =  </msg>
+<var>${d}</var>
+<arg>${cells}[5]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.214757" elapsed="0.036574"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${search_term}' == '${fn}' or '${search_term}' == '${ln}' or '${search_term}' == '${a}' or '${search_term}' == '${e}' or '${search_term}' == '${s}' or '${search_term}' == '${d}'</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.252332" elapsed="0.001631"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-31T01:24:44.254981" level="INFO">${index} = 11</msg>
+<var>${index}</var>
+<arg>${index} + 1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.254981" elapsed="0.000000"/>
+</kw>
+<var name="${row}">&lt;selenium.webdriver.remote.webelement.WebElement (session="406d014d7c8e74780efdf821beacf8f8", element="f.D1A1035300A4D8A7A19FEDB3C1611E63.d.32622BE647717448FFC43154AD172AFF.e.98")&gt;</var>
+<status status="PASS" start="2025-05-31T01:24:43.903135" elapsed="0.351846"/>
+</iter>
+<var>${row}</var>
+<value>@{rows}</value>
+<status status="PASS" start="2025-05-31T01:24:38.940466" elapsed="5.318177"/>
+</for>
+<kw name="Fail" owner="BuiltIn">
+<msg time="2025-05-31T01:24:44.260657" level="FAIL">No se encontro ninguna fila</msg>
+<arg>No se encontro ninguna fila</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="FAIL" start="2025-05-31T01:24:44.258643" elapsed="0.011525">No se encontro ninguna fila</status>
+</kw>
+<arg>${params}[0]</arg>
+<status status="FAIL" start="2025-05-31T01:24:34.643603" elapsed="9.627578">No se encontro ninguna fila</status>
+</kw>
+<arg>'${action}' == 'add'</arg>
+<arg>Add New Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'edit'</arg>
+<arg>Edit Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>${params}[2]</arg>
+<arg>${params}[3]</arg>
+<arg>${params}[4]</arg>
+<arg>${params}[5]</arg>
+<arg>${params}[6]</arg>
+<arg>${params}[7]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete'</arg>
+<arg>Delete Row</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'search'</arg>
+<arg>Search Table</arg>
+<arg>${params}[0]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="FAIL" start="2025-05-31T01:24:34.642604" elapsed="9.628577">No se encontro ninguna fila</status>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<arg>filename=${SCREENSHOT_DIR}/WebTable_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="NOT RUN" start="2025-05-31T01:24:44.271181" elapsed="0.000996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${action}' == 'add' or '${action}' == 'edit'</arg>
+<arg>Verify Row Exists</arg>
+<arg>${expected}[0]</arg>
+<arg>${expected}[1]</arg>
+<arg>${expected}[2]</arg>
+<arg>${expected}[3]</arg>
+<arg>${expected}[4]</arg>
+<arg>${expected}[5]</arg>
+<arg>ELSE IF</arg>
+<arg>'${action}' == 'delete' and '${expected}[0]' == 'none'</arg>
+<arg>Verify Row Does Not Exist</arg>
+<arg>${params}[0]</arg>
+<arg>${params}[1]</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-31T01:24:44.281747" elapsed="0.000994"/>
+</kw>
+<arg>${Accion}</arg>
+<arg>${Parametros}</arg>
+<arg>${Resultado_Esperado}</arg>
+<arg>${Caso}</arg>
+<status status="FAIL" start="2025-05-31T01:24:34.621607" elapsed="9.661134">No se encontro ninguna fila</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-31T01:24:44.282741" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2025-05-31T01:24:44.284762" elapsed="0.000000"/>
+</kw>
+<arg>Caso=Caso 5(Debe Fallar)</arg>
+<arg>Accion=search</arg>
+<arg>Parametros=XYZ</arg>
+<arg>Resultado_Esperado=</arg>
+<status status="FAIL" start="2025-05-31T01:24:07.137890" elapsed="37.146872">No se encontro ninguna fila</status>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T01:24:44.442273" level="INFO" html="true">&lt;a href="recording_5.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_5.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Web Table Caso 5(Debe Fallar)</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T01:24:44.294104" elapsed="0.148169"/>
+</kw>
+<status status="FAIL" start="2025-05-31T01:24:05.019256" elapsed="39.273227">No se encontro ninguna fila</status>
+</test>
+<doc>Prueba para interactuar con la tabla web en demoqa.com</doc>
+<status status="FAIL" start="2025-05-31T01:20:43.342888" elapsed="241.103389"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Webtables" id="s1" pass="4" fail="1" skip="0">Webtables</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,1356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-05-31T05:35:20.825231" rpa="false" schemaversion="5">
+<suite id="s1" name="Formulario" source="C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Tests\Formulario.robot">
+<test id="s1-t1" name="Test Formulario Caso 1" line="17">
+<msg time="2025-05-31T05:35:26.809791" level="INFO">Automatically setting a fps of 6.5</msg>
+<kw name="Submit Form And Verify">
+<kw name="Open Browser To Form" owner="locator_formulario">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:26.820327" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<arg>${FORM_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T05:35:26.820327" elapsed="20.106508"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T05:35:46.927834" elapsed="0.299154"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:47.227988" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T05:35:47.226988" elapsed="0.050318"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:47.279321" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T05:35:47.277306" elapsed="0.029993"/>
+</kw>
+<status status="PASS" start="2025-05-31T05:35:26.820327" elapsed="20.486972"/>
+</kw>
+<kw name="Fill Personal Details" owner="Keywords_formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:47.311295" level="INFO">Typing text 'Natalia' into text field 'xpath=//*[@id="firstName"]'.</msg>
+<arg>${FIRST_NAMES}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:47.310299" elapsed="2.579682"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:49.892000" level="INFO">Typing text 'Naranjo' into text field 'xpath=//*[@id="lastName"]'.</msg>
+<arg>${LAST_NAMES}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:49.892000" elapsed="0.426042"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:50.319041" level="INFO">Typing text 'Nmarinez@gmail.com' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${EMAILS}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:50.318042" elapsed="0.524639"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:50.843672" level="INFO">Typing text '5444545566' into text field 'xpath=//*[@id="userNumber"]'.</msg>
+<arg>${MOBILE_NUMBERS}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:50.842681" elapsed="0.343658"/>
+</kw>
+<arg>${First_Name}</arg>
+<arg>${Last_Name}</arg>
+<arg>${Email}</arg>
+<arg>${Mobile}</arg>
+<status status="PASS" start="2025-05-31T05:35:47.308298" elapsed="3.878041"/>
+</kw>
+<kw name="Select Gender" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:51.188330" level="INFO">Clicking element 'xpath=//*[@id="genterWrapper"]/div[2]/div[2]/label'.</msg>
+<arg>${GENDER_FEMALES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.188330" elapsed="0.239793"/>
+</kw>
+<arg>'${gender}' == 'Male'</arg>
+<arg>Click Element</arg>
+<arg>${GENDER_MALES}</arg>
+<arg>ELSE IF</arg>
+<arg>'${gender}' == 'Female'</arg>
+<arg>Click Element</arg>
+<arg>${GENDER_FEMALES}</arg>
+<arg>ELSE IF</arg>
+<arg>'${gender}' == 'Other'</arg>
+<arg>Click Element</arg>
+<arg>${GENDER_OTHERS}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Género inválido: ${gender}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.187332" elapsed="0.240791"/>
+</kw>
+<arg>${Gender}</arg>
+<status status="PASS" start="2025-05-31T05:35:51.186339" elapsed="0.241784"/>
+</kw>
+<kw name="Set Date Of Birth By Picker" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T05:35:51.430120" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.430120" elapsed="0.000000"/>
+</kw>
+<arg>'${day}' == '' and '${month}' == '' and '${year}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.429121" elapsed="0.001999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${DATE_OF_BIRTHS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:35:51.431120" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>xpath=//select[contains(@class,'react-datepicker__year-select')]</arg>
+<arg>${year}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:35:51.431120" elapsed="0.000000"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<arg>xpath=//select[contains(@class,'react-datepicker__month-select')]</arg>
+<arg>${month}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:35:51.432120" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class,'react-datepicker__day') and not(contains(@class, 'react-datepicker__day--outside-month')) and text()='${day}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:35:51.433123" elapsed="0.000000"/>
+</kw>
+<arg>${Day}</arg>
+<arg>${Month}</arg>
+<arg>${Year}</arg>
+<status status="PASS" start="2025-05-31T05:35:51.429121" elapsed="0.005015"/>
+</kw>
+<kw name="Add Subjects" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${subjects}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.435931" elapsed="0.000000"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T05:35:51.437181" level="INFO">${subject_list} = ['Chemistry', 'Computer Science']</msg>
+<var>${subject_list}</var>
+<arg>${subjects}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.437181" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T05:35:51.439177" level="INFO">${subject} = Chemistry</msg>
+<var>${subject}</var>
+<arg>${subject}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.438180" elapsed="0.000997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:51.439177" level="INFO">Clicking element 'xpath=//input[@id="subjectsInput"]'.</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.439177" elapsed="0.249395"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:35:52.188780" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:35:51.688572" elapsed="0.500208"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:52.191134" level="INFO">Sending key(s) ('Chemistry',) to xpath=//input[@id="subjectsInput"] element.</msg>
+<msg time="2025-05-31T05:35:52.514864" level="INFO">Sending keys Chemistry</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>${subject}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-31T05:35:52.188780" elapsed="0.766582"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:35:53.955915" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:35:52.955362" elapsed="1.000553"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:53.955915" level="INFO">Sending key(s) ('ARROW_DOWN',) to xpath=//input[@id="subjectsInput"] element.</msg>
+<msg time="2025-05-31T05:35:54.294215" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg time="2025-05-31T05:35:54.294215" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-31T05:35:53.955915" elapsed="0.353249"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:54.310163" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@id="subjectsInput"] element.</msg>
+<msg time="2025-05-31T05:35:54.613705" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-05-31T05:35:54.613705" level="INFO">Releasing special key ENTER.</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-31T05:35:54.309164" elapsed="0.351240"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'subjects-auto-complete__multi-value__label') and text()='${subject}']</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-31T05:35:54.660404" elapsed="0.470374"/>
+</kw>
+<var name="${subject}">Chemistry</var>
+<status status="PASS" start="2025-05-31T05:35:51.438180" elapsed="3.692598"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T05:35:55.130778" level="INFO">${subject} = Computer Science</msg>
+<var>${subject}</var>
+<arg>${subject}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T05:35:55.130778" elapsed="0.002014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:55.132792" level="INFO">Clicking element 'xpath=//input[@id="subjectsInput"]'.</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:35:55.132792" elapsed="0.260756"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:35:55.893887" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:35:55.393548" elapsed="0.500339"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:55.902054" level="INFO">Sending key(s) ('Computer Science',) to xpath=//input[@id="subjectsInput"] element.</msg>
+<msg time="2025-05-31T05:35:56.379045" level="INFO">Sending keys Computer Science</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>${subject}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-31T05:35:55.899918" elapsed="1.375774"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:35:58.278813" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:35:57.275692" elapsed="1.005135"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:58.280827" level="INFO">Sending key(s) ('ARROW_DOWN',) to xpath=//input[@id="subjectsInput"] element.</msg>
+<msg time="2025-05-31T05:35:58.868687" level="INFO">Pressing special key ARROW_DOWN to element.</msg>
+<msg time="2025-05-31T05:35:58.868687" level="INFO">Releasing special key ARROW_DOWN.</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-31T05:35:58.280827" elapsed="0.622841"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:35:58.905688" level="INFO">Sending key(s) ('ENTER',) to xpath=//input[@id="subjectsInput"] element.</msg>
+<msg time="2025-05-31T05:35:59.461080" level="INFO">Pressing special key ENTER to element.</msg>
+<msg time="2025-05-31T05:35:59.461080" level="INFO">Releasing special key ENTER.</msg>
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="PASS" start="2025-05-31T05:35:58.905688" elapsed="0.632862"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'subjects-auto-complete__multi-value__label') and text()='${subject}']</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-31T05:35:59.538550" elapsed="0.094263"/>
+</kw>
+<var name="${subject}">Computer Science</var>
+<status status="PASS" start="2025-05-31T05:35:55.130778" elapsed="4.504049"/>
+</iter>
+<var>${subject}</var>
+<value>@{subject_list}</value>
+<status status="PASS" start="2025-05-31T05:35:51.437181" elapsed="8.197646"/>
+</for>
+<arg>${Subjects}</arg>
+<status status="PASS" start="2025-05-31T05:35:51.434136" elapsed="8.200691"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T05:36:00.353495" level="INFO" html="true">&lt;a href="Results/Screenshots/Formulario/Formulario1_Caso%201.png"&gt;&lt;img src="Results/Screenshots/Formulario/Formulario1_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Formulario1_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T05:35:59.634827" elapsed="0.718668"/>
+</kw>
+<kw name="Select Hobbies" owner="Keywords_formulario">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:00.377152" level="INFO">Executing JavaScript:
+window.scrollTo(0, 650)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 650)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.369354" elapsed="0.052493"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${hobbies}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.421847" elapsed="0.000998"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-31T05:36:00.422845" level="INFO">${hobby_list} = ['Reading', 'Sports']</msg>
+<var>${hobby_list}</var>
+<arg>${hobbies}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.422845" elapsed="0.000999"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T05:36:00.424846" level="INFO">${hobby} = Reading</msg>
+<var>${hobby}</var>
+<arg>${hobby}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.424846" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:00.427844" level="INFO">Clicking element 'xpath=//*[@id="hobbiesWrapper"]/div[2]/div[2]/label'.</msg>
+<arg>${HOBBY_READING}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.426844" elapsed="0.314799"/>
+</kw>
+<arg>'${hobby}' == 'Sports'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_SPORTS}</arg>
+<arg>ELSE IF</arg>
+<arg>'${hobby}' == 'Reading'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_READING}</arg>
+<arg>ELSE IF</arg>
+<arg>'${hobby}' == 'Music'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_MUSIC}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Hobby inválido: ${hobby}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.425847" elapsed="0.315796"/>
+</kw>
+<var name="${hobby}">Reading</var>
+<status status="PASS" start="2025-05-31T05:36:00.424846" elapsed="0.316797"/>
+</iter>
+<iter>
+<kw name="Strip String" owner="String">
+<msg time="2025-05-31T05:36:00.743670" level="INFO">${hobby} = Sports</msg>
+<var>${hobby}</var>
+<arg>${hobby}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.743670" elapsed="0.002014"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:00.745684" level="INFO">Clicking element 'xpath=//*[@id="hobbiesWrapper"]/div[2]/div[1]/label'.</msg>
+<arg>${HOBBY_SPORTS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.745684" elapsed="0.496546"/>
+</kw>
+<arg>'${hobby}' == 'Sports'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_SPORTS}</arg>
+<arg>ELSE IF</arg>
+<arg>'${hobby}' == 'Reading'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_READING}</arg>
+<arg>ELSE IF</arg>
+<arg>'${hobby}' == 'Music'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_MUSIC}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Hobby inválido: ${hobby}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:36:00.745684" elapsed="0.496546"/>
+</kw>
+<var name="${hobby}">Sports</var>
+<status status="PASS" start="2025-05-31T05:36:00.743670" elapsed="0.498560"/>
+</iter>
+<var>${hobby}</var>
+<value>@{hobby_list}</value>
+<status status="PASS" start="2025-05-31T05:36:00.423844" elapsed="0.818386"/>
+</for>
+<arg>${Hobbies}</arg>
+<status status="PASS" start="2025-05-31T05:36:00.367343" elapsed="0.874887"/>
+</kw>
+<kw name="Upload Picture" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${file_path}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:36:01.244251" elapsed="0.000000"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:01.244251" level="INFO">Sending C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Resources\images\thorfinn.jpg to browser.</msg>
+<arg>${UPLOAD_PICTURE}</arg>
+<arg>${file_path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:01.244251" elapsed="0.429208"/>
+</kw>
+<arg>${Picture}</arg>
+<status status="PASS" start="2025-05-31T05:36:01.242230" elapsed="0.431229"/>
+</kw>
+<kw name="Fill Address" owner="Keywords_formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:01.673459" level="INFO">Typing text 'Carrera 50 #45-67 Medellin' into text field 'xpath=//*[@id="currentAddress"]'.</msg>
+<arg>${CURRENT_ADDRESS}</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:01.673459" elapsed="0.780397"/>
+</kw>
+<arg>${Current_Address}</arg>
+<status status="PASS" start="2025-05-31T05:36:01.673459" elapsed="0.780397"/>
+</kw>
+<kw name="Select State And City" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${state}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:36:02.454856" elapsed="0.000998"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:02.455854" level="INFO">Clicking element 'xpath=//div[@id='state']'.</msg>
+<arg>${STATE_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:02.455854" elapsed="0.288796"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:36:03.252704" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:36:02.744650" elapsed="0.508054"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T05:36:03.252704" level="INFO">${state_option} = xpath=//div[contains(@class,'-option') and text()='Uttar Pradesh']</msg>
+<var>${state_option}</var>
+<arg>xpath=//div[contains(@class,'-option') and text()='${state}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T05:36:03.252704" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${state_option}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-31T05:36:03.254725" elapsed="0.098480"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:03.355222" level="INFO">Clicking element 'xpath=//div[contains(@class,'-option') and text()='Uttar Pradesh']'.</msg>
+<arg>${state_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:03.353205" elapsed="0.231373"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:03.586548" level="INFO">Clicking element 'xpath=//div[@id='city']'.</msg>
+<arg>${CITY_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:03.584578" elapsed="0.341769"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:36:04.426894" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:36:03.926347" elapsed="0.500547"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-31T05:36:04.430904" level="INFO">${city_option} = xpath=//div[contains(@class,'-option') and text()='Lucknow']</msg>
+<var>${city_option}</var>
+<arg>xpath=//div[contains(@class,'-option') and text()='${city}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-31T05:36:04.426894" elapsed="0.004010"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${city_option}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-31T05:36:04.431906" elapsed="0.107207"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:04.541132" level="INFO">Clicking element 'xpath=//div[contains(@class,'-option') and text()='Lucknow']'.</msg>
+<arg>${city_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:04.539113" elapsed="0.431640"/>
+</kw>
+<arg>${State}</arg>
+<arg>${City}</arg>
+<status status="PASS" start="2025-05-31T05:36:02.453856" elapsed="2.516897"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T05:36:05.146357" level="INFO" html="true">&lt;a href="Results/Screenshots/Formulario/Formulario2_Caso%201.png"&gt;&lt;img src="Results/Screenshots/Formulario/Formulario2_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Formulario2_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T05:36:04.971753" elapsed="0.174604"/>
+</kw>
+<kw name="Submit Form" owner="Keywords_formulario">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:05.148369" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.148369" elapsed="0.303299"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MODAL_TABLE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.453688" elapsed="0.070170"/>
+</kw>
+<status status="PASS" start="2025-05-31T05:36:05.148369" elapsed="0.375489"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T05:36:05.668605" level="INFO" html="true">&lt;a href="Results/Screenshots/Formulario/Formulario3_Caso%201.png"&gt;&lt;img src="Results/Screenshots/Formulario/Formulario3_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Formulario3_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T05:36:05.523858" elapsed="0.146766"/>
+</kw>
+<kw name="Verify Form Submission" owner="Keywords_formulario">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:05.771483" level="INFO">${name} = Natalia Naranjo</msg>
+<var>${name}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[1]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.672636" elapsed="0.098847"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:05.830200" level="INFO">${email} = Nmarinez@gmail.com</msg>
+<var>${email}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[2]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.771483" elapsed="0.058717"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:05.893788" level="INFO">${gender} = Female</msg>
+<var>${gender}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[3]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.830200" elapsed="0.063588"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:05.933184" level="INFO">${mobile} = 5444545566</msg>
+<var>${mobile}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[4]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.895808" elapsed="0.039388"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.004121" level="INFO">${dob} = 31 May,2025</msg>
+<var>${dob}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[5]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:05.935196" elapsed="0.068925"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.065944" level="INFO">${subjects} = Chemistry, Computer Science</msg>
+<var>${subjects}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[6]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.004121" elapsed="0.061823"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.099680" level="INFO">${hobbies} = Reading, Sports</msg>
+<var>${hobbies}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[7]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.065944" elapsed="0.033736"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.165466" level="INFO">${picture} = thorfinn.jpg</msg>
+<var>${picture}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[8]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.099680" elapsed="0.065786"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.254383" level="INFO">${address} = Carrera 50 #45-67 Medellin</msg>
+<var>${address}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[9]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.167484" elapsed="0.086899"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.309821" level="INFO">${state_city} = Uttar Pradesh Lucknow</msg>
+<var>${state_city}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[10]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.254383" elapsed="0.055438"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${esperado_student_name}</arg>
+<arg>Error en Student Name</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.309821" elapsed="0.001015"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${email}</arg>
+<arg>${esperado_email}</arg>
+<arg>Error en Student Email</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.310836" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${gender}</arg>
+<arg>${esperado_gender}</arg>
+<arg>Error en Gender</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.310836" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${mobile}</arg>
+<arg>${esperado_mobile}</arg>
+<arg>Error en Mobile</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.310836" elapsed="0.006070"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${dob}</arg>
+<arg>${esperado_date_of_birth}</arg>
+<arg>Error en Date of Birth</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.318933" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${subjects}</arg>
+<arg>${esperado_subjects}</arg>
+<arg>Error en Subjects</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.318933" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${hobbies}</arg>
+<arg>${esperado_hobbies}</arg>
+<arg>Error en Hobbies</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.318933" elapsed="0.004043"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${picture}</arg>
+<arg>${esperado_picture}</arg>
+<arg>Error en Picture</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.322976" elapsed="0.002020"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${address}</arg>
+<arg>${esperado_address}</arg>
+<arg>Error en Address</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.327018" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${state_city}</arg>
+<arg>${esperado_state_and_city}</arg>
+<arg>Error en State and City</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.327018" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:06.332811" level="INFO">Clicking element 'xpath=//*[@id="closeLargeModal"]'.</msg>
+<arg>${CLOSE_MODAL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.332811" elapsed="0.360674"/>
+</kw>
+<arg>${Esperado_Student_Name}</arg>
+<arg>${Esperado_Email}</arg>
+<arg>${Esperado_Gender}</arg>
+<arg>${Esperado_Mobile}</arg>
+<arg>${Esperado_Date_of_Birth}</arg>
+<arg>${Esperado_Subjects}</arg>
+<arg>${Esperado_Hobbies}</arg>
+<arg>${Esperado_Picture}</arg>
+<arg>${Esperado_Address}</arg>
+<arg>${Esperado_State_and_City}</arg>
+<status status="PASS" start="2025-05-31T05:36:05.670624" elapsed="1.022861"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:36:11.696024" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:36:06.693485" elapsed="5.002539"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-31T05:36:11.696024" elapsed="5.129177"/>
+</kw>
+<arg>Caso=Caso 1</arg>
+<arg>First_Name=Natalia</arg>
+<arg>Last_Name=Naranjo</arg>
+<arg>Email=Nmarinez@gmail.com</arg>
+<arg>Gender=Female</arg>
+<arg>Mobile=5444545566</arg>
+<arg>Day=</arg>
+<arg>Month=</arg>
+<arg>Year=</arg>
+<arg>Subjects=Chemistry,Computer Science</arg>
+<arg>Hobbies=Reading,Sports</arg>
+<arg>Picture=C:/Users/juans/OneDrive/Escritorio/Proyectos/Tarea de AUTOMATIZACION/Robot/Resources/images/thorfinn.jpg</arg>
+<arg>Current_Address=Carrera 50 #45-67 Medellin</arg>
+<arg>State=Uttar Pradesh</arg>
+<arg>City=Lucknow</arg>
+<arg>Esperado_Student_Name=Natalia Naranjo</arg>
+<arg>Esperado_Email=Nmarinez@gmail.com</arg>
+<arg>Esperado_Gender=Female</arg>
+<arg>Esperado_Mobile=5444545566</arg>
+<arg>Esperado_Date_of_Birth=31 May,2025</arg>
+<arg>Esperado_Subjects=Chemistry, Computer Science</arg>
+<arg>Esperado_Hobbies=Reading, Sports</arg>
+<arg>Esperado_Picture=thorfinn.jpg</arg>
+<arg>Esperado_Address=Carrera 50 #45-67 Medellin</arg>
+<arg>Esperado_State_and_City=Uttar Pradesh Lucknow</arg>
+<status status="PASS" start="2025-05-31T05:35:26.820327" elapsed="50.004874"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T05:36:17.175360" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Formulario Caso 1</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T05:36:16.827213" elapsed="0.350174"/>
+</kw>
+<status status="PASS" start="2025-05-31T05:35:24.624710" elapsed="52.202503"/>
+</test>
+<test id="s1-t2" name="Test Formulario Caso 2" line="17">
+<msg time="2025-05-31T05:36:19.591806" level="INFO">Automatically setting a fps of 7.5</msg>
+<kw name="Submit Form And Verify">
+<kw name="Open Browser To Form" owner="locator_formulario">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:19.599599" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/automation-practice-form'.</msg>
+<arg>${FORM_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-31T05:36:19.599599" elapsed="39.905013"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-31T05:36:59.504612" elapsed="0.271841"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:59.777465" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T05:36:59.776453" elapsed="0.069903"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:59.848564" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T05:36:59.847356" elapsed="0.056952"/>
+</kw>
+<status status="PASS" start="2025-05-31T05:36:19.597575" elapsed="40.306733"/>
+</kw>
+<kw name="Fill Personal Details" owner="Keywords_formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:36:59.908309" level="INFO">Typing text 'Juan' into text field 'xpath=//*[@id="firstName"]'.</msg>
+<arg>${FIRST_NAMES}</arg>
+<arg>${first_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:36:59.907304" elapsed="0.826926"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:00.735227" level="INFO">Typing text 'Sanchez' into text field 'xpath=//*[@id="lastName"]'.</msg>
+<arg>${LAST_NAMES}</arg>
+<arg>${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:00.734230" elapsed="2.751213"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:03.486442" level="INFO">Typing text '' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${EMAILS}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:03.486442" elapsed="0.285223"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:03.772667" level="INFO">Typing text '3994448881' into text field 'xpath=//*[@id="userNumber"]'.</msg>
+<arg>${MOBILE_NUMBERS}</arg>
+<arg>${mobile}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:03.772667" elapsed="0.347437"/>
+</kw>
+<arg>${First_Name}</arg>
+<arg>${Last_Name}</arg>
+<arg>${Email}</arg>
+<arg>${Mobile}</arg>
+<status status="PASS" start="2025-05-31T05:36:59.905306" elapsed="4.214798"/>
+</kw>
+<kw name="Select Gender" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:04.122102" level="INFO">Clicking element 'xpath=//*[@id="genterWrapper"]/div[2]/div[1]/label'.</msg>
+<arg>${GENDER_MALES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:04.122102" elapsed="0.203857"/>
+</kw>
+<arg>'${gender}' == 'Male'</arg>
+<arg>Click Element</arg>
+<arg>${GENDER_MALES}</arg>
+<arg>ELSE IF</arg>
+<arg>'${gender}' == 'Female'</arg>
+<arg>Click Element</arg>
+<arg>${GENDER_FEMALES}</arg>
+<arg>ELSE IF</arg>
+<arg>'${gender}' == 'Other'</arg>
+<arg>Click Element</arg>
+<arg>${GENDER_OTHERS}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Género inválido: ${gender}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:37:04.121098" elapsed="0.205861"/>
+</kw>
+<arg>${Gender}</arg>
+<status status="PASS" start="2025-05-31T05:37:04.121098" elapsed="0.207862"/>
+</kw>
+<kw name="Set Date Of Birth By Picker" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${day}' == '' and '${month}' == '' and '${year}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:37:04.331871" elapsed="0.001001"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:04.333869" level="INFO">Clicking element 'xpath=//*[@id="dateOfBirthInput"]'.</msg>
+<arg>${DATE_OF_BIRTHS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:04.332872" elapsed="0.519459"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:04.853331" level="INFO">Selecting options from selection list 'xpath=//select[contains(@class,'react-datepicker__year-select')]' by value 2000.</msg>
+<arg>xpath=//select[contains(@class,'react-datepicker__year-select')]</arg>
+<arg>${year}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-05-31T05:37:04.852331" elapsed="0.280785"/>
+</kw>
+<kw name="Select From List By Value" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:05.134118" level="INFO">Selecting options from selection list 'xpath=//select[contains(@class,'react-datepicker__month-select')]' by value 5.</msg>
+<arg>xpath=//select[contains(@class,'react-datepicker__month-select')]</arg>
+<arg>${month}</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.134118" elapsed="0.202300"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:05.337422" level="INFO">Clicking element 'xpath=//div[contains(@class,'react-datepicker__day') and not(contains(@class, 'react-datepicker__day--outside-month')) and text()='1']'.</msg>
+<arg>xpath=//div[contains(@class,'react-datepicker__day') and not(contains(@class, 'react-datepicker__day--outside-month')) and text()='${day}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.337422" elapsed="0.227175"/>
+</kw>
+<arg>${Day}</arg>
+<arg>${Month}</arg>
+<arg>${Year}</arg>
+<status status="PASS" start="2025-05-31T05:37:04.330960" elapsed="1.234327"/>
+</kw>
+<kw name="Add Subjects" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T05:37:05.567888" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.567888" elapsed="0.000000"/>
+</kw>
+<arg>'${subjects}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.566929" elapsed="0.000959"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${subject_list}</var>
+<arg>${subjects}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.567888" elapsed="0.001013"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Strip String" owner="String">
+<var>${subject}</var>
+<arg>${subject}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.568901" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.569899" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.569899" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>${subject}</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.569899" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.570900" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>ARROW_DOWN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.570900" elapsed="0.000000"/>
+</kw>
+<kw name="Press Keys" owner="SeleniumLibrary">
+<arg>xpath=//input[@id="subjectsInput"]</arg>
+<arg>ENTER</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.570900" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//div[contains(@class, 'subjects-auto-complete__multi-value__label') and text()='${subject}']</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.571899" elapsed="0.000000"/>
+</kw>
+<var name="${subject}"/>
+<status status="NOT RUN" start="2025-05-31T05:37:05.568901" elapsed="0.002998"/>
+</iter>
+<var>${subject}</var>
+<value>@{subject_list}</value>
+<status status="NOT RUN" start="2025-05-31T05:37:05.568901" elapsed="0.002998"/>
+</for>
+<arg>${Subjects}</arg>
+<status status="PASS" start="2025-05-31T05:37:05.565765" elapsed="0.006134"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T05:37:05.734781" level="INFO" html="true">&lt;a href="Results/Screenshots/Formulario/Formulario1_Caso%202.png"&gt;&lt;img src="Results/Screenshots/Formulario/Formulario1_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Formulario1_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T05:37:05.572899" elapsed="0.161882"/>
+</kw>
+<kw name="Select Hobbies" owner="Keywords_formulario">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:05.736778" level="INFO">Executing JavaScript:
+window.scrollTo(0, 650)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 650)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.736778" elapsed="0.039304"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T05:37:05.777081" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.777081" elapsed="0.000000"/>
+</kw>
+<arg>'${hobbies}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.776082" elapsed="0.000999"/>
+</kw>
+<kw name="Split String" owner="String">
+<var>${hobby_list}</var>
+<arg>${hobbies}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.778081" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Strip String" owner="String">
+<var>${hobby}</var>
+<arg>${hobby}</arg>
+<doc>Remove leading and/or trailing whitespaces from the given string.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.779082" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${hobby}' == 'Sports'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_SPORTS}</arg>
+<arg>ELSE IF</arg>
+<arg>'${hobby}' == 'Reading'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_READING}</arg>
+<arg>ELSE IF</arg>
+<arg>'${hobby}' == 'Music'</arg>
+<arg>Click Element</arg>
+<arg>${HOBBY_MUSIC}</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Hobby inválido: ${hobby}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.779082" elapsed="0.000000"/>
+</kw>
+<var name="${hobby}"/>
+<status status="NOT RUN" start="2025-05-31T05:37:05.778081" elapsed="0.001001"/>
+</iter>
+<var>${hobby}</var>
+<value>@{hobby_list}</value>
+<status status="NOT RUN" start="2025-05-31T05:37:05.778081" elapsed="0.001001"/>
+</for>
+<arg>${Hobbies}</arg>
+<status status="PASS" start="2025-05-31T05:37:05.735780" elapsed="0.043302"/>
+</kw>
+<kw name="Upload Picture" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T05:37:05.786567" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.786567" elapsed="0.000999"/>
+</kw>
+<arg>'${file_path}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.785568" elapsed="0.001998"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<arg>${UPLOAD_PICTURE}</arg>
+<arg>${file_path}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:05.787566" elapsed="0.000000"/>
+</kw>
+<arg>${Picture}</arg>
+<status status="PASS" start="2025-05-31T05:37:05.784554" elapsed="0.003012"/>
+</kw>
+<kw name="Fill Address" owner="Keywords_formulario">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:05.789565" level="INFO">Typing text '' into text field 'xpath=//*[@id="currentAddress"]'.</msg>
+<arg>${CURRENT_ADDRESS}</arg>
+<arg>${address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:05.788567" elapsed="0.278521"/>
+</kw>
+<arg>${Current_Address}</arg>
+<status status="PASS" start="2025-05-31T05:37:05.788567" elapsed="0.279527"/>
+</kw>
+<kw name="Select State And City" owner="Keywords_formulario">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Return From Keyword" owner="BuiltIn">
+<msg time="2025-05-31T05:37:06.070104" level="INFO">Returning from the enclosing user keyword.</msg>
+<doc>Returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2025-05-31T05:37:06.069104" elapsed="0.001000"/>
+</kw>
+<arg>'${state}' == ''</arg>
+<arg>Return From Keyword</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-31T05:37:06.069104" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${STATE_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.070104" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.071105" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${state_option}</var>
+<arg>xpath=//div[contains(@class,'-option') and text()='${state}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.071105" elapsed="0.000998"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${state_option}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.072103" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${state_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.072103" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${CITY_DROPDOWN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.073103" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.073103" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${city_option}</var>
+<arg>xpath=//div[contains(@class,'-option') and text()='${city}']</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.073103" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${city_option}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.074104" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${city_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-05-31T05:37:06.074104" elapsed="0.000000"/>
+</kw>
+<arg>${State}</arg>
+<arg>${City}</arg>
+<status status="PASS" start="2025-05-31T05:37:06.068094" elapsed="0.006010"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T05:37:06.237869" level="INFO" html="true">&lt;a href="Results/Screenshots/Formulario/Formulario2_Caso%202.png"&gt;&lt;img src="Results/Screenshots/Formulario/Formulario2_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Formulario2_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T05:37:06.074104" elapsed="0.163765"/>
+</kw>
+<kw name="Submit Form" owner="Keywords_formulario">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:06.239882" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:06.239882" elapsed="0.418446"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MODAL_TABLE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-31T05:37:06.658328" elapsed="0.160101"/>
+</kw>
+<status status="PASS" start="2025-05-31T05:37:06.237869" elapsed="0.580560"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-31T05:37:07.729597" level="INFO" html="true">&lt;a href="Results/Screenshots/Formulario/Formulario3_Caso%202.png"&gt;&lt;img src="Results/Screenshots/Formulario/Formulario3_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Formulario3_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-31T05:37:06.820451" elapsed="0.911156"/>
+</kw>
+<kw name="Verify Form Submission" owner="Keywords_formulario">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:13.840037" level="INFO">${name} = Juan Sanchez</msg>
+<var>${name}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[1]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:07.747466" elapsed="6.092571"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:13.937039" level="INFO">${email} = </msg>
+<var>${email}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[2]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:13.842051" elapsed="0.094988"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:13.996068" level="INFO">${gender} = Male</msg>
+<var>${gender}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[3]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:13.939053" elapsed="0.057015"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.123656" level="INFO">${mobile} = 3994448881</msg>
+<var>${mobile}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[4]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:13.998085" elapsed="0.127583"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.189304" level="INFO">${dob} = 01 June,2000</msg>
+<var>${dob}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[5]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.125668" elapsed="0.063636"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.249991" level="INFO">${subjects} = </msg>
+<var>${subjects}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[6]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.189304" elapsed="0.060687"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.314825" level="INFO">${hobbies} = </msg>
+<var>${hobbies}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[7]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.252020" elapsed="0.062805"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.360387" level="INFO">${picture} = </msg>
+<var>${picture}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[8]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.316840" elapsed="0.043547"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.431800" level="INFO">${address} = </msg>
+<var>${address}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[9]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.362403" elapsed="0.069397"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.518720" level="INFO">${state_city} = </msg>
+<var>${state_city}</var>
+<arg>xpath=(//div[@class='table-responsive']//table//tbody/tr)[10]/td[2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.433555" elapsed="0.085165"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${name}</arg>
+<arg>${esperado_student_name}</arg>
+<arg>Error en Student Name</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.520734" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${email}</arg>
+<arg>${esperado_email}</arg>
+<arg>Error en Student Email</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.520734" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${gender}</arg>
+<arg>${esperado_gender}</arg>
+<arg>Error en Gender</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.520734" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${mobile}</arg>
+<arg>${esperado_mobile}</arg>
+<arg>Error en Mobile</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.522743" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${dob}</arg>
+<arg>${esperado_date_of_birth}</arg>
+<arg>Error en Date of Birth</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.522743" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${subjects}</arg>
+<arg>${esperado_subjects}</arg>
+<arg>Error en Subjects</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.522743" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${hobbies}</arg>
+<arg>${esperado_hobbies}</arg>
+<arg>Error en Hobbies</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.522743" elapsed="0.002008"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${picture}</arg>
+<arg>${esperado_picture}</arg>
+<arg>Error en Picture</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.524751" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${address}</arg>
+<arg>${esperado_address}</arg>
+<arg>Error en Address</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.524751" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${state_city}</arg>
+<arg>${esperado_state_and_city}</arg>
+<arg>Error en State and City</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.524751" elapsed="0.002008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-31T05:37:14.526759" level="INFO">Clicking element 'xpath=//*[@id="closeLargeModal"]'.</msg>
+<arg>${CLOSE_MODAL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.526759" elapsed="0.230322"/>
+</kw>
+<arg>${Esperado_Student_Name}</arg>
+<arg>${Esperado_Email}</arg>
+<arg>${Esperado_Gender}</arg>
+<arg>${Esperado_Mobile}</arg>
+<arg>${Esperado_Date_of_Birth}</arg>
+<arg>${Esperado_Subjects}</arg>
+<arg>${Esperado_Hobbies}</arg>
+<arg>${Esperado_Picture}</arg>
+<arg>${Esperado_Address}</arg>
+<arg>${Esperado_State_and_City}</arg>
+<status status="PASS" start="2025-05-31T05:37:07.731607" elapsed="7.025474"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-31T05:37:19.758371" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-31T05:37:14.757081" elapsed="5.001290"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-31T05:37:19.758371" elapsed="6.518543"/>
+</kw>
+<arg>Caso=Caso 2</arg>
+<arg>First_Name=Juan</arg>
+<arg>Last_Name=Sanchez</arg>
+<arg>Email=</arg>
+<arg>Gender=Male</arg>
+<arg>Mobile=3994448881</arg>
+<arg>Day=1</arg>
+<arg>Month=5</arg>
+<arg>Year=2000</arg>
+<arg>Subjects=</arg>
+<arg>Hobbies=</arg>
+<arg>Picture=</arg>
+<arg>Current_Address=</arg>
+<arg>State=</arg>
+<arg>City=</arg>
+<arg>Esperado_Student_Name=Juan Sanchez</arg>
+<arg>Esperado_Email=</arg>
+<arg>Esperado_Gender=Male</arg>
+<arg>Esperado_Mobile=3994448881</arg>
+<arg>Esperado_Date_of_Birth=01 June,2000</arg>
+<arg>Esperado_Subjects=</arg>
+<arg>Esperado_Hobbies=</arg>
+<arg>Esperado_Picture=</arg>
+<arg>Esperado_Address=</arg>
+<arg>Esperado_State_and_City=</arg>
+<status status="PASS" start="2025-05-31T05:36:19.597575" elapsed="66.679339"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-31T05:37:26.401211" level="INFO" html="true">&lt;a href="recording_2.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_2.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Formulario Caso 2</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-31T05:37:26.278908" elapsed="0.122303"/>
+</kw>
+<status status="PASS" start="2025-05-31T05:36:17.177387" elapsed="69.101521"/>
+</test>
+<doc>Prueba para llenar formulario en demoqa.com</doc>
+<status status="PASS" start="2025-05-31T05:35:20.829861" elapsed="125.577503"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Formulario" id="s1" pass="2" fail="0" skip="0">Formulario</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

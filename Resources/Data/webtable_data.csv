@@ -1,0 +1,6 @@
+${Caso};${Accion};${Parametros};${Resultado_Esperado}
+Caso 1;add;John,Doe,30,john.doe@example.com,5000,IT;John,Doe,30,john.doe@example.com,5000,IT
+Caso 2;edit;Cierra,Vega,Jane,Smith,35,jane.smith@example.com,6000,HR;Jane,Smith,35,jane.smith@example.com,6000,HR
+Caso 3;delete;Alden,Cantrell;none
+Caso 4;search;Cierra;
+Caso 5(Debe Fallar);search;XYZ;

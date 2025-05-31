@@ -1,0 +1,5 @@
+${Caso};${Full_Name};${Email};${Current_Address};${Permanent_Address};${Esperado_Name};${Esperado_Email};${Esperado_Current_Address};${Esperado_Permanent_Address}
+Caso 1;Natalia Martinez;Nmarinez@gmail.com;Carrera 50 #45-67 Medellin;Carrera 25 #18-55 Manizales;Natalia Martinez;Nmarinez@gmail.com;Carrera 50 #45-67 Medellin;Carrera 25 #18-55 Manizales
+Caso 2;Luis Guillermo;Lguillermo@elpoli.edu.co;;;Luis Guillermo;Lguillermo@elpoli.edu.co;;
+Caso 3;Luz Andrea;invalid.email;Calle 30 #17-45 Cartagena;;;;;
+Caso 4;;;Avenida Circunvalar #10-22 Pereira;Transversal 93 #45-76 Bucaramanga;;;Avenida Circunvalar #10-22 Pereira;Transversal 93 #45-76 Bucaramanga

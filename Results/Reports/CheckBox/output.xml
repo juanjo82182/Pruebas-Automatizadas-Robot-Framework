@@ -1,0 +1,2419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-05-25T06:35:54.884597" rpa="false" schemaversion="5">
+<suite id="s1" name="Checkbox" source="C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Tests\Checkbox.robot">
+<test id="s1-t1" name="Test Checkbox Caso 1" line="18">
+<msg time="2025-05-25T06:35:59.406439" level="INFO">Automatically setting a fps of 6.5</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:35:59.416453" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:35:59.416453" elapsed="29.414005"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:36:28.831460" elapsed="0.414408"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:29.247891" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:36:29.245868" elapsed="0.074405"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:29.323659" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:36:29.320273" elapsed="0.031932"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:35:59.414436" elapsed="29.937769"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:29.369487" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:36:29.362489" elapsed="1.699404"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:36:31.063892" level="INFO">@{node_list} = [ Documents ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.062896" elapsed="0.000996"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:36:31.066893" level="INFO">${node_clean} = documents</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.065892" elapsed="0.001001"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.069892" elapsed="0.002001"/>
+</kw>
+<msg time="2025-05-25T06:36:31.071893" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.068893" elapsed="0.003000"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:36:31.073942" elapsed="0.000000"/>
+</return>
+<msg time="2025-05-25T06:36:31.074893" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:36:31.067892" elapsed="0.007001"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:36:31.075892" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:36:31.075892" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:36:31.075892" elapsed="0.001001"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:36:31.074893" elapsed="0.002000"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:36:31.078891" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.076893" elapsed="0.001998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:31.084293" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.084293" elapsed="2.939628"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:36:31.082292" elapsed="2.943655"/>
+</kw>
+<var name="${node}">Documents</var>
+<status status="PASS" start="2025-05-25T06:36:31.065892" elapsed="2.960055"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:36:31.064892" elapsed="2.961055"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:36:29.361409" elapsed="4.664538"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:36:29.356250" elapsed="4.669697"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:36:34.027968" level="INFO">@{checkbox_list} = [ WorkSpace ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.027968" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:36:34.029986" level="INFO">${checkbox_clean} = workspace</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.029986" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:36:34.032000" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.032000" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:34.034013" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.034013" elapsed="0.388920"/>
+</kw>
+<var name="${checkbox}">WorkSpace</var>
+<status status="PASS" start="2025-05-25T06:36:34.027968" elapsed="0.394965"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:36:34.027968" elapsed="0.394965"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:36:34.027968" elapsed="0.395960"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.025947" elapsed="0.397981"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:36:34.697759" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%201.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:36:34.436759" elapsed="0.261000"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:34.699771" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.697759" elapsed="0.046631"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:36:34.748390" level="INFO">${formatted_expected} = You have selected :
+workspace
+react
+angular
+veu</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.747390" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.754387" elapsed="0.005382"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.763768" elapsed="0.140804"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.759769" elapsed="0.144803"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:36:34.745390" elapsed="0.159182"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:36:29.354226" elapsed="5.550346"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:36:39.906917" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:36:34.904572" elapsed="5.002345"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:36:39.908928" elapsed="6.505288"/>
+</kw>
+<arg>Expand_Nodes=Documents</arg>
+<arg>Checkboxes=WorkSpace</arg>
+<arg>Esperado_Resultados=workspace react angular veu</arg>
+<arg>Caso=Caso 1</arg>
+<status status="PASS" start="2025-05-25T06:35:59.412421" elapsed="47.002798"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:36:46.522140" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 1</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:36:46.419742" elapsed="0.102398"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:35:57.211266" elapsed="49.206423"/>
+</test>
+<test id="s1-t2" name="Test Checkbox Caso 2" line="18">
+<msg time="2025-05-25T06:36:48.667494" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:36:48.675283" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:36:48.673531" elapsed="23.819765"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:37:12.495414" elapsed="0.310070"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:12.808878" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:37:12.806487" elapsed="0.195455"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:13.003939" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:37:13.001942" elapsed="0.026524"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:36:48.673531" elapsed="24.356949"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:13.034504" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:37:13.034504" elapsed="1.210225"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:37:14.244729" level="INFO">@{node_list} = [ Desktop ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.244729" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:37:14.248760" level="INFO">${node_clean} = desktop</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.248760" elapsed="0.000000"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.255622" elapsed="0.000704"/>
+</kw>
+<msg time="2025-05-25T06:37:14.256326" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.248760" elapsed="0.007566"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:37:14.256326" elapsed="0.000000"/>
+</return>
+<msg time="2025-05-25T06:37:14.258339" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:37:14.248760" elapsed="0.009579"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:37:14.260354" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:37:14.260354" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:37:14.258339" elapsed="0.002015"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:37:14.258339" elapsed="0.002015"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:37:14.262365" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.260354" elapsed="0.002011"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:14.264375" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.264375" elapsed="0.282209"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.262365" elapsed="0.284219"/>
+</kw>
+<var name="${node}">Desktop</var>
+<status status="PASS" start="2025-05-25T06:37:14.248760" elapsed="0.298823"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:37:14.246746" elapsed="0.300837"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:37:13.034504" elapsed="1.513079"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:13.032491" elapsed="1.515092"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:37:14.550579" level="INFO">@{checkbox_list} = [ Commands ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.549583" elapsed="0.000996"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:37:14.551580" level="INFO">${checkbox_clean} = commands</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.550579" elapsed="0.001001"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:37:14.554580" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[2]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.551580" elapsed="0.003000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:14.556133" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[2]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.555223" elapsed="0.330355"/>
+</kw>
+<var name="${checkbox}">Commands</var>
+<status status="PASS" start="2025-05-25T06:37:14.550579" elapsed="0.337016"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:37:14.550579" elapsed="0.337016"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:37:14.549583" elapsed="0.338708"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:14.548581" elapsed="0.340101"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:37:15.098421" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%202.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:37:14.888682" elapsed="0.209739"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:15.100433" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:37:15.100433" elapsed="0.063023"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:37:15.164454" level="INFO">${formatted_expected} = You have selected :
+commands</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:37:15.164454" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:15.165455" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:37:15.166455" elapsed="0.133369"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:15.166455" elapsed="0.133369"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:37:15.163456" elapsed="0.138380"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:37:13.030480" elapsed="2.271356"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:37:20.302253" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:37:15.301836" elapsed="5.000417"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:37:20.302253" elapsed="3.383556"/>
+</kw>
+<arg>Expand_Nodes=Desktop</arg>
+<arg>Checkboxes=Commands</arg>
+<arg>Esperado_Resultados=commands</arg>
+<arg>Caso=Caso 2</arg>
+<status status="PASS" start="2025-05-25T06:36:48.673531" elapsed="35.012278"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:37:23.747446" level="INFO" html="true">&lt;a href="recording_2.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_2.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 2</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:37:23.687825" elapsed="0.059621"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:36:46.522140" elapsed="37.163669"/>
+</test>
+<test id="s1-t3" name="Test Checkbox Caso 3" line="18">
+<msg time="2025-05-25T06:37:26.047481" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:26.053188" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:37:26.053188" elapsed="23.386669"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:37:49.440680" elapsed="0.292251"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:49.737003" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:37:49.733932" elapsed="0.062116"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:49.796048" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:37:49.796048" elapsed="0.074098"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:37:26.049354" elapsed="23.820792"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:49.875146" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:37:49.875146" elapsed="0.686345"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:37:50.562493" level="INFO">@{node_list} = [ Documents ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.562493" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:37:50.564492" level="INFO">${node_clean} = documents</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.563491" elapsed="0.001001"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.565491" elapsed="0.001000"/>
+</kw>
+<msg time="2025-05-25T06:37:50.566491" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.564492" elapsed="0.001999"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:37:50.566491" elapsed="0.000000"/>
+</return>
+<msg time="2025-05-25T06:37:50.567491" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:37:50.564492" elapsed="0.002999"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:37:50.567491" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:37:50.568489" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:37:50.567491" elapsed="0.002014"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:37:50.567491" elapsed="0.002014"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:37:50.571491" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.569505" elapsed="0.001986"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:50.574331" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.573113" elapsed="0.287382"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.572493" elapsed="0.288002"/>
+</kw>
+<var name="${node}">Documents</var>
+<status status="PASS" start="2025-05-25T06:37:50.563491" elapsed="0.297004"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:37:50.562493" elapsed="0.298002"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:37:49.874146" elapsed="0.987371"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:49.872145" elapsed="0.989372"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:37:50.863494" level="INFO">@{checkbox_list} = [ Office ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.863494" elapsed="0.001000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:37:50.865497" level="INFO">${checkbox_clean} = office</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.864494" elapsed="0.001003"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:37:50.867508" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.865497" elapsed="0.002011"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:50.869249" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.867508" elapsed="0.241947"/>
+</kw>
+<var name="${checkbox}">Office</var>
+<status status="PASS" start="2025-05-25T06:37:50.864494" elapsed="0.244961"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:37:50.864494" elapsed="0.244961"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:37:50.862493" elapsed="0.247960"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:50.861517" elapsed="0.249938"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:37:51.276745" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%203.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%203.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:37:51.112456" elapsed="0.164289"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:37:51.276745" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:37:51.276745" elapsed="0.055997"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:37:51.335739" level="INFO">${formatted_expected} = You have selected :
+office
+public
+private
+classified
+general</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:37:51.333753" elapsed="0.001986"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:51.335739" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:37:51.337734" elapsed="0.092291"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:37:51.337734" elapsed="0.092291"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:37:51.332742" elapsed="0.097283"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:37:49.871146" elapsed="1.558879"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:37:56.430290" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:37:51.430025" elapsed="5.000265"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:37:56.430290" elapsed="4.040897"/>
+</kw>
+<arg>Expand_Nodes=Documents</arg>
+<arg>Checkboxes=Office</arg>
+<arg>Esperado_Resultados=office public private classified general</arg>
+<arg>Caso=Caso 3</arg>
+<status status="PASS" start="2025-05-25T06:37:26.049354" elapsed="34.421833"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:38:00.616023" level="INFO" html="true">&lt;a href="recording_3.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_3.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 3</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:38:00.473202" elapsed="0.144837"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:37:23.749461" elapsed="36.721726"/>
+</test>
+<test id="s1-t4" name="Test Checkbox Caso 4" line="18">
+<msg time="2025-05-25T06:38:02.796302" level="INFO">Automatically setting a fps of 7.5</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:38:02.801608" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:38:02.801608" elapsed="24.520539"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:38:27.323154" elapsed="0.249349"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:38:27.573504" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:38:27.573504" elapsed="0.057439"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:38:27.631915" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:38:27.630943" elapsed="0.340081"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:38:02.798315" elapsed="25.172709"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:38:27.977019" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:38:27.978019" elapsed="0.000000"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:38:29.894014" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%204.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%204.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:38:27.980018" elapsed="1.913996"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:38:29.894014" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:38:29.894014" elapsed="2.405588"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:38:32.302600" level="INFO">${formatted_expected} = You have selected :
+none</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:38:32.301602" elapsed="0.000998"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:38:32.329712" level="INFO">Element 'xpath=//*[@id="result"]' did not exist.</msg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-25T06:38:32.304601" elapsed="0.025111"/>
+</kw>
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:38:32.302600" elapsed="0.027112"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:38:32.329712" elapsed="0.000000"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:38:32.300600" elapsed="0.031128"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:38:27.973022" elapsed="4.358706"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:38:37.335034" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:38:32.331728" elapsed="5.003306"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:38:37.335034" elapsed="5.425753"/>
+</kw>
+<arg>Expand_Nodes=</arg>
+<arg>Checkboxes=</arg>
+<arg>Esperado_Resultados=none</arg>
+<arg>Caso=Caso 4</arg>
+<status status="PASS" start="2025-05-25T06:38:02.798315" elapsed="39.962472"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:38:42.901363" level="INFO" html="true">&lt;a href="recording_4.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_4.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 4</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:38:42.764816" elapsed="0.136547"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:38:00.666073" elapsed="42.098743"/>
+</test>
+<test id="s1-t5" name="Test Checkbox Caso 5" line="18">
+<msg time="2025-05-25T06:38:45.052642" level="INFO">Automatically setting a fps of 7.5</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:38:45.057757" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:38:45.057757" elapsed="25.129939"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.188696" elapsed="0.271190"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:10.460890" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.459886" elapsed="0.023007"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:10.483886" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.483886" elapsed="0.141610"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:38:45.054658" elapsed="25.570838"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:10.633505" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.633505" elapsed="0.273271"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:39:10.907776" level="INFO">@{node_list} = [ Downloads ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.907776" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:39:10.909773" level="INFO">${node_clean} = downloads</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.908946" elapsed="0.000827"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.913778" elapsed="0.000998"/>
+</kw>
+<msg time="2025-05-25T06:39:10.914776" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.910772" elapsed="0.004004"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:39:10.915776" elapsed="0.000998"/>
+</return>
+<msg time="2025-05-25T06:39:10.916774" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:39:10.910772" elapsed="0.007004"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:39:10.917776" elapsed="0.000996"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:39:10.919777" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:39:10.917776" elapsed="0.002001"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:39:10.917776" elapsed="0.002001"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:39:10.922774" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.920775" elapsed="0.001999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:10.924772" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.924772" elapsed="0.192225"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.922774" elapsed="0.195219"/>
+</kw>
+<var name="${node}">Downloads</var>
+<status status="PASS" start="2025-05-25T06:39:10.908946" elapsed="0.209047"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:39:10.908946" elapsed="0.209047"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:39:10.631497" elapsed="0.486496"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:39:10.628504" elapsed="0.489489"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:39:11.121995" level="INFO">@{checkbox_list} = [ Excel File.doc ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:39:11.120994" elapsed="0.001001"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:39:11.124997" level="INFO">${checkbox_clean} = excelfile</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:39:11.122999" elapsed="0.001998"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:39:11.127994" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[2]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:39:11.124997" elapsed="0.003997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:11.128994" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[2]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:39:11.128994" elapsed="0.806962"/>
+</kw>
+<var name="${checkbox}">Excel File.doc</var>
+<status status="PASS" start="2025-05-25T06:39:11.122999" elapsed="0.812957"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:39:11.122999" elapsed="0.812957"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:39:11.119998" elapsed="0.815958"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:39:11.118999" elapsed="0.816957"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:39:12.345581" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%205.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%205.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:39:11.937974" elapsed="0.407607"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:12.345581" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:39:12.345581" elapsed="2.036381"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:39:14.383976" level="INFO">${formatted_expected} = You have selected :
+excelFile</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:39:14.383976" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:39:14.383976" elapsed="0.002013"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:39:14.385989" elapsed="0.082012"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:39:14.385989" elapsed="0.082012"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:39:14.383976" elapsed="0.084025"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:39:10.627497" elapsed="3.840504"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:39:19.470578" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:39:14.468001" elapsed="5.002577"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:39:19.470578" elapsed="5.079529"/>
+</kw>
+<arg>Expand_Nodes=Downloads</arg>
+<arg>Checkboxes=Excel File.doc</arg>
+<arg>Esperado_Resultados=excelFile</arg>
+<arg>Caso=Caso 5</arg>
+<status status="PASS" start="2025-05-25T06:38:45.054658" elapsed="39.495449"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:39:24.667017" level="INFO" html="true">&lt;a href="recording_5.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_5.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 5</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:39:24.552125" elapsed="0.114892"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:38:42.903381" elapsed="41.648744"/>
+</test>
+<test id="s1-t6" name="Test Checkbox Caso 6" line="18">
+<msg time="2025-05-25T06:39:26.818457" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:39:26.823562" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:39:26.823562" elapsed="49.076959"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:40:15.905491" elapsed="0.344992"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:16.255692" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:40:16.250483" elapsed="0.062026"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:16.315293" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:40:16.313507" elapsed="0.014851"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:39:26.820470" elapsed="49.507888"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:16.342389" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:40:16.341386" elapsed="0.651723"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:40:16.993109" level="INFO">@{node_list} = [ Desktop ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:40:16.993109" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:40:16.998698" level="INFO">${node_clean} = desktop</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:40:16.996143" elapsed="0.004571"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:40:17.006754" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-25T06:40:17.006754" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:17.002732" elapsed="0.004022"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:40:17.006754" elapsed="0.002009"/>
+</return>
+<msg time="2025-05-25T06:40:17.008763" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:40:17.000714" elapsed="0.008049"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:40:17.010774" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:40:17.010774" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:40:17.010774" elapsed="0.000000"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:40:17.010774" elapsed="0.000000"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:40:17.022480" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:40:17.012786" elapsed="0.009694"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:17.035576" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:40:17.026513" elapsed="2.431564"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:17.022480" elapsed="2.435597"/>
+</kw>
+<var name="${node}">Desktop</var>
+<status status="PASS" start="2025-05-25T06:40:16.995129" elapsed="2.462948"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:40:16.993109" elapsed="2.464968"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:40:16.338388" elapsed="3.120688"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:16.335203" elapsed="3.123873"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:40:19.461075" level="INFO">@{checkbox_list} = [ Notes ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.461075" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:40:19.463074" level="INFO">${checkbox_clean} = notes</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.462075" elapsed="0.002007"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:40:19.467609" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[1]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.465079" elapsed="0.002530"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:19.468665" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[1]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.467609" elapsed="0.270391"/>
+</kw>
+<var name="${checkbox}">Notes</var>
+<status status="PASS" start="2025-05-25T06:40:19.462075" elapsed="0.275925"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:40:19.461075" elapsed="0.276925"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:40:19.460075" elapsed="0.277925"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.459076" elapsed="0.278924"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:40:19.895120" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%206.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%206.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:40:19.738996" elapsed="0.156124"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:19.897129" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.897129" elapsed="0.033262"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:40:19.933331" level="INFO">${formatted_expected} = You have selected :
+notes</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.932629" elapsed="0.000702"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.933331" elapsed="0.001090"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.936415" elapsed="0.077967"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:19.935415" elapsed="0.080985"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:40:19.930391" elapsed="0.086009"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:40:16.330518" elapsed="3.685882"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:40:25.042514" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:40:20.016400" elapsed="5.026114"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:40:25.042514" elapsed="5.693982"/>
+</kw>
+<arg>Expand_Nodes=Desktop</arg>
+<arg>Checkboxes=Notes</arg>
+<arg>Esperado_Resultados=notes</arg>
+<arg>Caso=Caso 6</arg>
+<status status="PASS" start="2025-05-25T06:39:26.820470" elapsed="63.916026"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:40:30.799076" level="INFO" html="true">&lt;a href="recording_6.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_6.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 6</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:40:30.744545" elapsed="0.054531"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:39:24.671015" elapsed="66.071519"/>
+</test>
+<test id="s1-t7" name="Test Checkbox Caso 7" line="18">
+<msg time="2025-05-25T06:40:32.945899" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:32.951370" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:40:32.951370" elapsed="23.603607"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:40:56.554977" elapsed="0.248200"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:56.805178" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:40:56.804177" elapsed="0.146225"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:56.952400" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:40:56.951398" elapsed="0.070048"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:40:32.951370" elapsed="24.070076"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:57.025445" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:40:57.024454" elapsed="1.171023"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:40:58.196476" level="INFO">@{node_list} = [ Documents | Downloads ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.195477" elapsed="0.000999"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:40:58.199001" level="INFO">${node_clean} = documents</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.198475" elapsed="0.000526"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.202078" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-25T06:40:58.202078" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.200077" elapsed="0.002001"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:40:58.204582" elapsed="0.000000"/>
+</return>
+<msg time="2025-05-25T06:40:58.204582" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:40:58.200077" elapsed="0.004505"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:40:58.205761" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:40:58.205761" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:40:58.205761" elapsed="0.000000"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:40:58.204582" elapsed="0.002179"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:40:58.208760" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.206761" elapsed="0.001999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:40:58.210761" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.210761" elapsed="3.595755"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:58.208760" elapsed="3.598757"/>
+</kw>
+<var name="${node}">Documents</var>
+<status status="PASS" start="2025-05-25T06:40:58.197478" elapsed="3.610039"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:01.809521" level="INFO">${node_clean} = downloads</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:01.807517" elapsed="0.002004"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:41:01.818521" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-25T06:41:01.818521" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:01.810516" elapsed="0.009001"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:41:01.819517" elapsed="0.000000"/>
+</return>
+<msg time="2025-05-25T06:41:01.820518" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:41:01.809521" elapsed="0.010997"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:41:01.820518" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:41:01.821517" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:41:01.820518" elapsed="0.000999"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:41:01.820518" elapsed="0.000999"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:01.822517" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:01.821517" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:01.824517" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:01.824517" elapsed="0.351465"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:01.823518" elapsed="0.352464"/>
+</kw>
+<var name="${node}">Downloads</var>
+<status status="PASS" start="2025-05-25T06:41:01.807517" elapsed="0.368465"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:40:58.197478" elapsed="3.978504"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:40:57.023445" elapsed="5.152537"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:40:57.023445" elapsed="5.152537"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:41:02.181070" level="INFO">@{checkbox_list} = [ Office | Word File.doc ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.181070" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:02.182070" level="INFO">${checkbox_clean} = office</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.182070" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:02.184070" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.183070" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:02.185070" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[2]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.184070" elapsed="0.202491"/>
+</kw>
+<var name="${checkbox}">Office</var>
+<status status="PASS" start="2025-05-25T06:41:02.182070" elapsed="0.205489"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:02.389562" level="INFO">${checkbox_clean} = wordfile</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.387559" elapsed="0.002003"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:02.391561" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[1]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.390560" elapsed="0.001001"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:02.392561" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[3]/ol/li[1]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.392561" elapsed="0.313479"/>
+</kw>
+<var name="${checkbox}">Word File.doc</var>
+<status status="PASS" start="2025-05-25T06:41:02.387559" elapsed="0.318481"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:41:02.181070" elapsed="0.524970"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:41:02.180074" elapsed="0.526960"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.179032" elapsed="0.528002"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:41:02.942018" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%207.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%207.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:41:02.707034" elapsed="0.234984"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:02.944043" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:41:02.942018" elapsed="0.060934"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:03.009953" level="INFO">${formatted_expected} = You have selected :
+office
+public
+private
+classified
+general
+wordFile</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:03.008954" elapsed="0.000999"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:03.022720" elapsed="0.001002"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:41:03.027720" elapsed="0.058157"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:03.023722" elapsed="0.062155"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:41:03.004955" elapsed="0.080922"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:40:57.021446" elapsed="6.064431"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:41:08.088367" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:41:03.085877" elapsed="5.002490"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:41:08.088367" elapsed="3.937469"/>
+</kw>
+<arg>Expand_Nodes=Documents,Downloads</arg>
+<arg>Checkboxes=Office,Word File.doc</arg>
+<arg>Esperado_Resultados=office public private classified general wordFile</arg>
+<arg>Caso=Caso 7</arg>
+<status status="PASS" start="2025-05-25T06:40:32.947913" elapsed="39.077923"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:41:12.075428" level="INFO" html="true">&lt;a href="recording_7.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_7.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 7</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:41:12.027843" elapsed="0.047585"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:40:30.803126" elapsed="41.224717"/>
+</test>
+<test id="s1-t8" name="Test Checkbox Caso 8" line="18">
+<msg time="2025-05-25T06:41:14.268568" level="INFO">Automatically setting a fps of 6.5</msg>
+<kw name="Test Checkbox Interaction">
+<kw name="Open Browser To Checkbox Page" owner="Locator_checkbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:14.284415" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/checkbox'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-25T06:41:14.284415" elapsed="25.389809"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-25T06:41:39.674224" elapsed="0.357469"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:40.032694" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:41:40.031693" elapsed="0.039065"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:40.072757" level="INFO">Executing JavaScript:
+window.scrollTo(0, 300)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 300)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:41:40.071757" elapsed="0.111927"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:41:14.284415" elapsed="25.900272"/>
+</kw>
+<kw name="Interact With Checkboxes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Expand Checkbox Nodes" owner="Keywords_checkbox">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:40.186682" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/span/button'.</msg>
+<arg>${EXPAND_HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:40.186682" elapsed="7.888002"/>
+</kw>
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:41:48.080967" level="INFO">@{node_list} = [ Documents | Desktop ]</msg>
+<var>@{node_list}</var>
+<arg>${Nodes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.075685" elapsed="0.005282"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:48.086176" level="INFO">${node_clean} = documents</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.083177" elapsed="0.004000"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.089174" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-25T06:41:48.089174" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.088174" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:41:48.089174" elapsed="0.001001"/>
+</return>
+<msg time="2025-05-25T06:41:48.090175" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:41:48.087177" elapsed="0.002998"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:41:48.091174" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:41:48.091174" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:41:48.090175" elapsed="0.000999"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:41:48.090175" elapsed="0.000999"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:48.094851" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.092175" elapsed="0.002676"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:48.107144" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.107144" elapsed="0.412336"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.098851" elapsed="0.420629"/>
+</kw>
+<var name="${node}">Documents</var>
+<status status="PASS" start="2025-05-25T06:41:48.083177" elapsed="0.436303"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:48.521477" level="INFO">${node_clean} = desktop</msg>
+<var>${node_clean}</var>
+<arg>$node.strip().lower().replace(' ', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.520484" elapsed="0.000993"/>
+</kw>
+<kw name="Get Parent Nodes" owner="Keywords_checkbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Create List" owner="BuiltIn">
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.523474" elapsed="0.000000"/>
+</kw>
+<msg time="2025-05-25T06:41:48.523474" level="INFO">${parents} = []</msg>
+<var>${parents}</var>
+<arg>'${node}' in ('workspace', 'office')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('notes', 'commands')</arg>
+<arg>Create List</arg>
+<arg>desktop</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('react', 'angular', 'veu')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>workspace</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('public', 'private', 'classified', 'general')</arg>
+<arg>Create List</arg>
+<arg>documents</arg>
+<arg>office</arg>
+<arg>ELSE IF</arg>
+<arg>'${node}' in ('wordfile', 'excelfile')</arg>
+<arg>Create List</arg>
+<arg>downloads</arg>
+<arg>ELSE</arg>
+<arg>Create List</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.522476" elapsed="0.000998"/>
+</kw>
+<return>
+<value>${parents}</value>
+<status status="PASS" start="2025-05-25T06:41:48.524481" elapsed="0.000000"/>
+</return>
+<msg time="2025-05-25T06:41:48.524481" level="INFO">${parent_nodes} = []</msg>
+<var>${parent_nodes}</var>
+<arg>${node_clean}</arg>
+<status status="PASS" start="2025-05-25T06:41:48.521477" elapsed="0.003004"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<var>${parent_locator}</var>
+<arg>${EXPAND_${parent.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" start="2025-05-25T06:41:48.525473" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${parent_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${parent_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2025-05-25T06:41:48.525473" elapsed="0.000000"/>
+</kw>
+<var name="${parent}"/>
+<status status="NOT RUN" start="2025-05-25T06:41:48.525473" elapsed="0.000000"/>
+</iter>
+<var>${parent}</var>
+<value>@{parent_nodes}</value>
+<status status="NOT RUN" start="2025-05-25T06:41:48.524481" elapsed="0.004232"/>
+</for>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:48.535536" level="INFO">${node_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/button</msg>
+<var>${node_locator}</var>
+<arg>${EXPAND_${node_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.533526" elapsed="0.002010"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:48.537546" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/span/button'.</msg>
+<arg>${node_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.537546" elapsed="0.273001"/>
+</kw>
+<arg>'${node_locator}' != '${EMPTY}'</arg>
+<arg>Click Element</arg>
+<arg>${node_locator}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.535536" elapsed="0.275011"/>
+</kw>
+<var name="${node}">Desktop</var>
+<status status="PASS" start="2025-05-25T06:41:48.520484" elapsed="0.290063"/>
+</iter>
+<var>${node}</var>
+<value>@{node_list}</value>
+<status status="PASS" start="2025-05-25T06:41:48.080967" elapsed="0.730574"/>
+</for>
+<arg>${Expand_Nodes}</arg>
+<status status="PASS" start="2025-05-25T06:41:40.186682" elapsed="8.629862"/>
+</kw>
+<arg>'${Expand_Nodes}' != ''</arg>
+<arg>Expand Checkbox Nodes</arg>
+<arg>${Expand_Nodes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:40.185683" elapsed="8.631863"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Select Checkboxes" owner="Keywords_checkbox">
+<kw name="Split String" owner="String">
+<msg time="2025-05-25T06:41:48.819542" level="INFO">@{checkbox_list} = [ WorkSpace | Notes ]</msg>
+<var>@{checkbox_list}</var>
+<arg>${Checkboxes}</arg>
+<arg>,</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.819542" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:48.822539" level="INFO">${checkbox_clean} = workspace</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.820542" elapsed="0.001997"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:48.823542" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.822539" elapsed="0.001003"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:48.824541" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[2]/ol/li[1]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.824541" elapsed="0.258704"/>
+</kw>
+<var name="${checkbox}">WorkSpace</var>
+<status status="PASS" start="2025-05-25T06:41:48.820542" elapsed="0.263706"/>
+</iter>
+<iter>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:49.085245" level="INFO">${checkbox_clean} = notes</msg>
+<var>${checkbox_clean}</var>
+<arg>$checkbox.strip().lower().replace(' ', '').replace('.doc', '')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.085245" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-05-25T06:41:49.087245" level="INFO">${checkbox_locator} = xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[1]/span/label</msg>
+<var>${checkbox_locator}</var>
+<arg>${CHECKBOX_${checkbox_clean.upper()}}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.086245" elapsed="0.001000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:49.088246" level="INFO">Clicking element 'xpath=//*[@id="tree-node"]/ol/li/ol/li[1]/ol/li[1]/span/label'.</msg>
+<arg>${checkbox_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.088246" elapsed="0.207477"/>
+</kw>
+<var name="${checkbox}">Notes</var>
+<status status="PASS" start="2025-05-25T06:41:49.084248" elapsed="0.212479"/>
+</iter>
+<var>${checkbox}</var>
+<value>@{checkbox_list}</value>
+<status status="PASS" start="2025-05-25T06:41:48.819542" elapsed="0.477185"/>
+</for>
+<arg>${Checkboxes}</arg>
+<status status="PASS" start="2025-05-25T06:41:48.818545" elapsed="0.478182"/>
+</kw>
+<arg>'${Checkboxes}' != ''</arg>
+<arg>Select Checkboxes</arg>
+<arg>${Checkboxes}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:48.817546" elapsed="0.479181"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-25T06:41:49.541136" level="INFO" html="true">&lt;a href="Results/Screenshots/CheckBox/CheckBox_Caso%208.png"&gt;&lt;img src="Results/Screenshots/CheckBox/CheckBox_Caso%208.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/CheckBox_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-25T06:41:49.296727" elapsed="0.244409"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-25T06:41:49.548819" level="INFO">Executing JavaScript:
+window.scrollTo(0, 400)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.541136" elapsed="0.216324"/>
+</kw>
+<kw name="Verify Checkbox Results" owner="Keywords_checkbox">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-05-25T06:41:49.767336" level="INFO">${formatted_expected} = You have selected :
+notes
+workspace
+react
+angular
+veu</msg>
+<var>${formatted_expected}</var>
+<arg>'You have selected :\\n' + '\\n'.join('${Esperado_Resultados}'.split())</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.758466" elapsed="0.008870"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Esperado_Resultados}' == 'none'</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.767336" elapsed="0.006332"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.773668" elapsed="0.112438"/>
+</kw>
+<arg>'${Esperado_Resultados}' != 'none'</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CONTAINER}</arg>
+<arg>${formatted_expected}</arg>
+<arg>timeout=15s</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.773668" elapsed="0.112438"/>
+</kw>
+<arg>${Esperado_Resultados}</arg>
+<status status="PASS" start="2025-05-25T06:41:49.757460" elapsed="0.130664"/>
+</kw>
+<arg>${Expand_Nodes}</arg>
+<arg>${Checkboxes}</arg>
+<arg>${Esperado_Resultados}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-25T06:41:40.184687" elapsed="9.703437"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-25T06:41:54.888970" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-25T06:41:49.888124" elapsed="5.000846"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-25T06:41:54.888970" elapsed="9.798321"/>
+</kw>
+<arg>Expand_Nodes=Documents,Desktop</arg>
+<arg>Checkboxes=WorkSpace,Notes</arg>
+<arg>Esperado_Resultados=notes workspace react angular veu </arg>
+<arg>Caso=Caso 8</arg>
+<status status="PASS" start="2025-05-25T06:41:14.284415" elapsed="50.402876"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-25T06:42:04.843146" level="INFO" html="true">&lt;a href="recording_8.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_8.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Checkbox Caso 8</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-25T06:42:04.693325" elapsed="0.149821"/>
+</kw>
+<status status="PASS" start="2025-05-25T06:41:12.087543" elapsed="52.605782"/>
+</test>
+<doc>Prueba para interactuar con los checkboxes en demoqa.com</doc>
+<status status="PASS" start="2025-05-25T06:35:54.887684" elapsed="369.969096"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Checkbox" id="s1" pass="8" fail="0" skip="0">Checkbox</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-25T06:35:57.156078" level="WARN">Error in file 'C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Keywords\Keywords_checkbox.robot' on line 51: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>

@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-05-20T20:44:28.975465" rpa="false" schemaversion="5">
+<suite id="s1" name="Textbox" source="C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Tests\Textbox.robot">
+<test id="s1-t1" name="Test Text Box Caso 1" line="18">
+<msg time="2025-05-20T20:44:33.330256" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Text Box Submission">
+<kw name="Open Browser To Radio Button Page" owner="Locator_textbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:44:33.337671" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:44:33.337671" elapsed="25.384461"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:44:58.723133" elapsed="0.266167"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:44:58.990296" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:44:58.989300" elapsed="0.053494"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:44:33.336673" elapsed="25.706121"/>
+</kw>
+<kw name="Fill Text Box Form" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:44:59.050636" level="INFO">Typing text 'Natalia Martinez' into text field 'xpath=//*[@id="userName"]'.</msg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:44:59.046797" elapsed="2.549957"/>
+</kw>
+<arg>'${Full_Name}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:44:59.045795" elapsed="2.552975"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:01.600916" level="INFO">Typing text 'Nmarinez@gmail.com' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:01.599783" elapsed="0.492882"/>
+</kw>
+<arg>'${Email}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:01.599783" elapsed="0.492882"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:02.093663" level="INFO">Typing text 'Carrera 50 #45-67 Medellin' into text field 'xpath=//*[@id="currentAddress-wrapper"]/div[2]//*[@id="currentAddress"]'.</msg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:02.093663" elapsed="0.603675"/>
+</kw>
+<arg>'${Current_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:02.092665" elapsed="0.604673"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:02.699350" level="INFO">Typing text 'Carrera 25 #18-55 Manizales' into text field 'xpath=//*[@id="permanentAddress-wrapper"]/div[2]//*[@id="permanentAddress"]'.</msg>
+<arg>${INPUT_PERMANENT_ADDRESS}</arg>
+<arg>${Permanent_Address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:02.697338" elapsed="0.633482"/>
+</kw>
+<arg>'${Permanent_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_PERMANENT_ADDRESS}</arg>
+<arg>${Permanent_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:02.697338" elapsed="0.633482"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:45:03.512034" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/Fill_Caso%201.png"&gt;&lt;img src="Results/Screenshots/TextBox/Fill_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Fill_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:45:03.330820" elapsed="0.181214"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:03.512034" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.512034" elapsed="0.041588"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:03.554621" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.554621" elapsed="0.275178"/>
+</kw>
+<arg>${Full_Name}</arg>
+<arg>${Email}</arg>
+<arg>${Current_Address}</arg>
+<arg>${Permanent_Address}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-20T20:44:59.043800" elapsed="4.785999"/>
+</kw>
+<kw name="Verify Text Box Results" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_NAME}</arg>
+<arg>Name:${Esperado_Name}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.832796" elapsed="0.081412"/>
+</kw>
+<arg>'${Esperado_Name}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_NAME}</arg>
+<arg>Name:${Esperado_Name}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.832796" elapsed="0.081412"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_EMAIL}</arg>
+<arg>Email:${Esperado_Email}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.916225" elapsed="0.055654"/>
+</kw>
+<arg>'${Esperado_Email}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_EMAIL}</arg>
+<arg>Email:${Esperado_Email}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_EMAIL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.914208" elapsed="0.057671"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<arg>Current Address :${Esperado_Current_Address}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.971879" elapsed="0.093090"/>
+</kw>
+<arg>'${Esperado_Current_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<arg>Current Address :${Esperado_Current_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:03.971879" elapsed="0.093090"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<arg>Permananet Address :${Esperado_Permanent_Address}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:45:04.066987" elapsed="0.164840"/>
+</kw>
+<arg>'${Esperado_Permanent_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<arg>Permananet Address :${Esperado_Permanent_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:04.064969" elapsed="0.168876"/>
+</kw>
+<arg>${Esperado_Name}</arg>
+<arg>${Esperado_Email}</arg>
+<arg>${Esperado_Current_Address}</arg>
+<arg>${Esperado_Permanent_Address}</arg>
+<status status="PASS" start="2025-05-20T20:45:03.830798" elapsed="0.403047"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:45:04.450159" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/verified_Caso%201.png"&gt;&lt;img src="Results/Screenshots/TextBox/verified_Caso%201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/verified_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:45:04.233845" elapsed="0.218072"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T20:45:09.454629" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T20:45:04.451917" elapsed="5.002712"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:45:09.466725" elapsed="11.979224"/>
+</kw>
+<arg>Full_Name=Natalia Martinez</arg>
+<arg>Email=Nmarinez@gmail.com</arg>
+<arg>Current_Address=Carrera 50 #45-67 Medellin</arg>
+<arg>Permanent_Address=Carrera 25 #18-55 Manizales</arg>
+<arg>Esperado_Name=Natalia Martinez</arg>
+<arg>Esperado_Email=Nmarinez@gmail.com</arg>
+<arg>Esperado_Current_Address=Carrera 50 #45-67 Medellin</arg>
+<arg>Esperado_Permanent_Address=Carrera 25 #18-55 Manizales</arg>
+<arg>Caso=Caso 1</arg>
+<status status="PASS" start="2025-05-20T20:44:33.334513" elapsed="48.111436"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-20T20:45:21.693296" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Text Box Caso 1</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-20T20:45:21.449977" elapsed="0.243319"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:44:31.108388" elapsed="50.339576"/>
+</test>
+<test id="s1-t2" name="Test Text Box Caso 2" line="18">
+<msg time="2025-05-20T20:45:23.850840" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Text Box Submission">
+<kw name="Open Browser To Radio Button Page" owner="Locator_textbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:23.856986" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:45:23.856986" elapsed="27.792161"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:45:51.649147" elapsed="0.269747"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:51.920905" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:45:51.918894" elapsed="0.159455"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:45:23.856986" elapsed="28.221363"/>
+</kw>
+<kw name="Fill Text Box Form" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:52.081345" level="INFO">Typing text 'Luis Guillermo' into text field 'xpath=//*[@id="userName"]'.</msg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:52.080346" elapsed="0.495611"/>
+</kw>
+<arg>'${Full_Name}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:52.079345" elapsed="0.496612"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:52.575957" level="INFO">Typing text 'Lguillermo@elpoli.edu.co' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:52.575957" elapsed="1.721865"/>
+</kw>
+<arg>'${Email}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:52.575957" elapsed="1.721865"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Current_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:54.297822" elapsed="0.002011"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Permanent_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_PERMANENT_ADDRESS}</arg>
+<arg>${Permanent_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:54.299833" elapsed="0.000000"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:45:54.511754" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/Fill_Caso%202.png"&gt;&lt;img src="Results/Screenshots/TextBox/Fill_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Fill_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:45:54.299833" elapsed="0.211921"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:54.513783" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:45:54.511754" elapsed="0.102076"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:54.614827" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:45:54.614827" elapsed="0.370048"/>
+</kw>
+<arg>${Full_Name}</arg>
+<arg>${Email}</arg>
+<arg>${Current_Address}</arg>
+<arg>${Permanent_Address}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-20T20:45:52.078349" elapsed="2.907527"/>
+</kw>
+<kw name="Verify Text Box Results" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_NAME}</arg>
+<arg>Name:${Esperado_Name}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:45:54.987875" elapsed="0.145045"/>
+</kw>
+<arg>'${Esperado_Name}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_NAME}</arg>
+<arg>Name:${Esperado_Name}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:54.986874" elapsed="0.146046"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_EMAIL}</arg>
+<arg>Email:${Esperado_Email}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.134938" elapsed="0.106663"/>
+</kw>
+<arg>'${Esperado_Email}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_EMAIL}</arg>
+<arg>Email:${Esperado_Email}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_EMAIL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.132920" elapsed="0.108681"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:55.313224" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="currentAddress"]' did not exist.</msg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.243621" elapsed="0.069603"/>
+</kw>
+<arg>'${Esperado_Current_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<arg>Current Address :${Esperado_Current_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.241601" elapsed="0.073401"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:45:55.356910" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="permanentAddress"]' did not exist.</msg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.315002" elapsed="0.041908"/>
+</kw>
+<arg>'${Esperado_Permanent_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<arg>Permananet Address :${Esperado_Permanent_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.315002" elapsed="0.041908"/>
+</kw>
+<arg>${Esperado_Name}</arg>
+<arg>${Esperado_Email}</arg>
+<arg>${Esperado_Current_Address}</arg>
+<arg>${Esperado_Permanent_Address}</arg>
+<status status="PASS" start="2025-05-20T20:45:54.985876" elapsed="0.371034"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:45:55.738838" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/verified_Caso%202.png"&gt;&lt;img src="Results/Screenshots/TextBox/verified_Caso%202.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/verified_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:45:55.356910" elapsed="0.381928"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T20:46:00.742125" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T20:45:55.739837" elapsed="5.002288"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:46:00.742125" elapsed="6.754421"/>
+</kw>
+<arg>Full_Name=Luis Guillermo</arg>
+<arg>Email=Lguillermo@elpoli.edu.co</arg>
+<arg>Current_Address=</arg>
+<arg>Permanent_Address=</arg>
+<arg>Esperado_Name=Luis Guillermo</arg>
+<arg>Esperado_Email=Lguillermo@elpoli.edu.co</arg>
+<arg>Esperado_Current_Address=</arg>
+<arg>Esperado_Permanent_Address=</arg>
+<arg>Caso=Caso 2</arg>
+<status status="PASS" start="2025-05-20T20:45:23.856986" elapsed="43.639560"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-20T20:46:07.593269" level="INFO" html="true">&lt;a href="recording_2.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_2.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Text Box Caso 2</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-20T20:46:07.498572" elapsed="0.096818"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:45:21.695312" elapsed="45.803260"/>
+</test>
+<test id="s1-t3" name="Test Text Box Caso 3" line="18">
+<msg time="2025-05-20T20:46:09.786531" level="INFO">Automatically setting a fps of 8.0</msg>
+<kw name="Test Text Box Submission">
+<kw name="Open Browser To Radio Button Page" owner="Locator_textbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:09.786531" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:46:09.786531" elapsed="24.860950"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:46:34.647481" elapsed="0.210675"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:34.860170" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:46:34.858156" elapsed="0.056319"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:46:09.786531" elapsed="25.127944"/>
+</kw>
+<kw name="Fill Text Box Form" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:34.917473" level="INFO">Typing text 'Luz Andrea' into text field 'xpath=//*[@id="userName"]'.</msg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:46:34.916473" elapsed="2.850630"/>
+</kw>
+<arg>'${Full_Name}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:34.916473" elapsed="2.852647"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:37.773147" level="INFO">Typing text 'invalid.email' into text field 'xpath=//*[@id="userEmail"]'.</msg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:46:37.771134" elapsed="0.441616"/>
+</kw>
+<arg>'${Email}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:37.769120" elapsed="0.443630"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:38.216517" level="INFO">Typing text 'Calle 30 #17-45 Cartagena' into text field 'xpath=//*[@id="currentAddress-wrapper"]/div[2]//*[@id="currentAddress"]'.</msg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:46:38.214763" elapsed="0.542059"/>
+</kw>
+<arg>'${Current_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:38.212750" elapsed="0.544072"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Permanent_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_PERMANENT_ADDRESS}</arg>
+<arg>${Permanent_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:38.758840" elapsed="0.000000"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:46:38.939669" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/Fill_Caso%203.png"&gt;&lt;img src="Results/Screenshots/TextBox/Fill_Caso%203.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Fill_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:46:38.758840" elapsed="0.181829"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:38.942871" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:46:38.941668" elapsed="0.049901"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:38.992569" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:46:38.991569" elapsed="0.199309"/>
+</kw>
+<arg>${Full_Name}</arg>
+<arg>${Email}</arg>
+<arg>${Current_Address}</arg>
+<arg>${Permanent_Address}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-20T20:46:34.915477" elapsed="4.277416"/>
+</kw>
+<kw name="Verify Text Box Results" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:39.213942" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="name"]' did not exist.</msg>
+<arg>${RESULT_NAME}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.194904" elapsed="0.020039"/>
+</kw>
+<arg>'${Esperado_Name}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_NAME}</arg>
+<arg>Name:${Esperado_Name}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.192893" elapsed="0.022050"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:39.243722" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="email"]' did not exist.</msg>
+<arg>${RESULT_EMAIL}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.215512" elapsed="0.028210"/>
+</kw>
+<arg>'${Esperado_Email}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_EMAIL}</arg>
+<arg>Email:${Esperado_Email}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_EMAIL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.215512" elapsed="0.028210"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:39.275492" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="currentAddress"]' did not exist.</msg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.245737" elapsed="0.029755"/>
+</kw>
+<arg>'${Esperado_Current_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<arg>Current Address :${Esperado_Current_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.245737" elapsed="0.029755"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:39.297218" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="permanentAddress"]' did not exist.</msg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.275492" elapsed="0.021726"/>
+</kw>
+<arg>'${Esperado_Permanent_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<arg>Permananet Address :${Esperado_Permanent_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.275492" elapsed="0.021726"/>
+</kw>
+<arg>${Esperado_Name}</arg>
+<arg>${Esperado_Email}</arg>
+<arg>${Esperado_Current_Address}</arg>
+<arg>${Esperado_Permanent_Address}</arg>
+<status status="PASS" start="2025-05-20T20:46:39.192893" elapsed="0.104325"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:46:39.445264" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/verified_Caso%203.png"&gt;&lt;img src="Results/Screenshots/TextBox/verified_Caso%203.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/verified_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:46:39.297218" elapsed="0.148046"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T20:46:44.476140" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T20:46:39.445264" elapsed="5.030876"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:46:44.476140" elapsed="5.915381"/>
+</kw>
+<arg>Full_Name=Luz Andrea</arg>
+<arg>Email=invalid.email</arg>
+<arg>Current_Address=Calle 30 #17-45 Cartagena</arg>
+<arg>Permanent_Address=</arg>
+<arg>Esperado_Name=</arg>
+<arg>Esperado_Email=</arg>
+<arg>Esperado_Current_Address=</arg>
+<arg>Esperado_Permanent_Address=</arg>
+<arg>Caso=Caso 3</arg>
+<status status="PASS" start="2025-05-20T20:46:09.786531" elapsed="40.604990"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-20T20:46:50.446629" level="INFO" html="true">&lt;a href="recording_3.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_3.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Text Box Caso 3</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-20T20:46:50.393534" elapsed="0.053095"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:46:07.597409" elapsed="42.794112"/>
+</test>
+<test id="s1-t4" name="Test Text Box Caso 4" line="18">
+<msg time="2025-05-20T20:46:52.978033" level="INFO">Automatically setting a fps of 6.5</msg>
+<kw name="Test Text Box Submission">
+<kw name="Open Browser To Radio Button Page" owner="Locator_textbox">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:46:52.984032" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/text-box'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:46:52.982032" elapsed="24.446798"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:47:17.428830" elapsed="0.281156"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:17.712979" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:47:17.710985" elapsed="0.076377"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:46:52.982032" elapsed="24.805330"/>
+</kw>
+<kw name="Fill Text Box Form" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Full_Name}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_FULL_NAME}</arg>
+<arg>${Full_Name}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:17.789648" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${Email}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_EMAIL}</arg>
+<arg>${Email}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:17.790646" elapsed="0.001000"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:17.792646" level="INFO">Typing text 'Avenida Circunvalar #10-22 Pereira' into text field 'xpath=//*[@id="currentAddress-wrapper"]/div[2]//*[@id="currentAddress"]'.</msg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:47:17.792646" elapsed="1.936424"/>
+</kw>
+<arg>'${Current_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_CURRENT_ADDRESS}</arg>
+<arg>${Current_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:17.791646" elapsed="1.937424"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:19.776554" level="INFO">Typing text 'Transversal 93 #45-76 Bucaramanga' into text field 'xpath=//*[@id="permanentAddress-wrapper"]/div[2]//*[@id="permanentAddress"]'.</msg>
+<arg>${INPUT_PERMANENT_ADDRESS}</arg>
+<arg>${Permanent_Address}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:47:19.776554" elapsed="0.752196"/>
+</kw>
+<arg>'${Permanent_Address}' != ''</arg>
+<arg>Input Text</arg>
+<arg>${INPUT_PERMANENT_ADDRESS}</arg>
+<arg>${Permanent_Address}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:19.774534" elapsed="0.754216"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:47:20.665613" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/Fill_Caso%204.png"&gt;&lt;img src="Results/Screenshots/TextBox/Fill_Caso%204.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/Fill_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:47:20.528750" elapsed="0.136863"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:20.667378" level="INFO">Executing JavaScript:
+window.scrollTo(0, document.body.scrollHeight)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, document.body.scrollHeight)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.667378" elapsed="0.046110"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:20.714483" level="INFO">Clicking element 'xpath=//*[@id="submit"]'.</msg>
+<arg>${SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.713488" elapsed="0.201826"/>
+</kw>
+<arg>${Full_Name}</arg>
+<arg>${Email}</arg>
+<arg>${Current_Address}</arg>
+<arg>${Permanent_Address}</arg>
+<arg>${Caso}</arg>
+<status status="PASS" start="2025-05-20T20:47:17.788463" elapsed="3.126851"/>
+</kw>
+<kw name="Verify Text Box Results" owner="keywords_textbox">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:20.947053" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="name"]' did not exist.</msg>
+<arg>${RESULT_NAME}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.917312" elapsed="0.031754"/>
+</kw>
+<arg>'${Esperado_Name}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_NAME}</arg>
+<arg>Name:${Esperado_Name}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_NAME}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.917312" elapsed="0.031754"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:47:20.980755" level="INFO">Element 'xpath=//*[@id="output"]/div/p[@id="email"]' did not exist.</msg>
+<arg>${RESULT_EMAIL}</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.949066" elapsed="0.031689"/>
+</kw>
+<arg>'${Esperado_Email}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_EMAIL}</arg>
+<arg>Email:${Esperado_Email}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_EMAIL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.949066" elapsed="0.031689"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<arg>Current Address :${Esperado_Current_Address}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.982778" elapsed="0.101355"/>
+</kw>
+<arg>'${Esperado_Current_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<arg>Current Address :${Esperado_Current_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_CURRENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:20.980755" elapsed="0.105136"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<arg>Permananet Address :${Esperado_Permanent_Address}</arg>
+<arg>timeout=15s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:47:21.085891" elapsed="0.087284"/>
+</kw>
+<arg>'${Esperado_Permanent_Address}' != ''</arg>
+<arg>Wait Until Element Contains</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<arg>Permananet Address :${Esperado_Permanent_Address}</arg>
+<arg>timeout=15s</arg>
+<arg>ELSE</arg>
+<arg>Element Should Not Be Visible</arg>
+<arg>${RESULT_PERMANENT_ADDRESS}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:47:21.085891" elapsed="0.087284"/>
+</kw>
+<arg>${Esperado_Name}</arg>
+<arg>${Esperado_Email}</arg>
+<arg>${Esperado_Current_Address}</arg>
+<arg>${Esperado_Permanent_Address}</arg>
+<status status="PASS" start="2025-05-20T20:47:20.916312" elapsed="0.256863"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:47:21.430577" level="INFO" html="true">&lt;a href="Results/Screenshots/TextBox/verified_Caso%204.png"&gt;&lt;img src="Results/Screenshots/TextBox/verified_Caso%204.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/verified_${Caso}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:47:21.173175" elapsed="0.257402"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T20:47:26.433012" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T20:47:21.432599" elapsed="5.000413"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:47:26.433012" elapsed="4.873813"/>
+</kw>
+<arg>Full_Name=</arg>
+<arg>Email=</arg>
+<arg>Current_Address=Avenida Circunvalar #10-22 Pereira</arg>
+<arg>Permanent_Address=Transversal 93 #45-76 Bucaramanga</arg>
+<arg>Esperado_Name=</arg>
+<arg>Esperado_Email=</arg>
+<arg>Esperado_Current_Address=Avenida Circunvalar #10-22 Pereira</arg>
+<arg>Esperado_Permanent_Address=Transversal 93 #45-76 Bucaramanga</arg>
+<arg>Caso=Caso 4</arg>
+<status status="PASS" start="2025-05-20T20:46:52.981036" elapsed="38.325789"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-20T20:47:31.346703" level="INFO" html="true">&lt;a href="recording_4.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_4.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Text Box Caso 4</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-20T20:47:31.308837" elapsed="0.037866"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:46:50.449942" elapsed="40.858895"/>
+</test>
+<doc>Prueba para interactuar con los radio buttons en demoqa.com</doc>
+<status status="PASS" start="2025-05-20T20:44:28.979216" elapsed="182.378759"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Textbox" id="s1" pass="4" fail="0" skip="0">Textbox</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

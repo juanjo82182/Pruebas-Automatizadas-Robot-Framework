@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-05-20T20:57:03.097161" rpa="false" schemaversion="5">
+<suite id="s1" name="Radiobuttons" source="C:\Users\juans\OneDrive\Escritorio\Proyectos\Tarea de AUTOMATIZACION\Robot\Tests\Radiobuttons.robot">
+<test id="s1-t1" name="Test Radio Button Yes" line="18">
+<msg time="2025-05-20T20:57:07.476156" level="INFO">Automatically setting a fps of 6.5</msg>
+<kw name="Test Radio Button Selection">
+<kw name="Open Browser To Radio Button Page" owner="Locator_radiobuttons">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:57:07.493810" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/radio-button'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:57:07.493810" elapsed="30.667407"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:57:38.161217" elapsed="0.310914"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:57:38.473134" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:57:38.472131" elapsed="0.060588"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:57:38.533723" level="INFO">Executing JavaScript:
+window.scrollTo(0, 200)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:57:38.532719" elapsed="0.026812"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:57:07.489783" elapsed="31.070763"/>
+</kw>
+<kw name="Select Radio Button" owner="keywords_radiobuttons">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:57:38.565677" level="INFO">Clicking element 'xpath=//*[@id="app"]/div/div/div/div[2]/div[2]/div[2]/label'.</msg>
+<arg>${RADIO_YES}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:57:38.563661" elapsed="2.309948"/>
+</kw>
+<arg>'${Radio}' == 'Yes'</arg>
+<arg>Click Element</arg>
+<arg>${RADIO_YES}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Radio}' == 'Impressive'</arg>
+<arg>Click Element</arg>
+<arg>${RADIO_IMPRESSIVE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:57:38.562542" elapsed="2.311067"/>
+</kw>
+<arg>${Radio}</arg>
+<status status="PASS" start="2025-05-20T20:57:38.560546" elapsed="2.313063"/>
+</kw>
+<kw name="Verify Selection Message" owner="keywords_radiobuttons">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_MESSAGE}</arg>
+<arg>${Mensaje Esperado}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:57:40.875629" elapsed="0.105104"/>
+</kw>
+<arg>${Mensaje Esperado}</arg>
+<status status="PASS" start="2025-05-20T20:57:40.873609" elapsed="0.107124"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:57:41.133792" level="INFO" html="true">&lt;a href="Results/Screenshots/RadioButtons/verified_Yes.png"&gt;&lt;img src="Results/Screenshots/RadioButtons/verified_Yes.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/verified_${Radio}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:57:40.980733" elapsed="0.153059"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T20:57:46.134157" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T20:57:41.133792" elapsed="5.000365"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:57:46.134157" elapsed="6.102841"/>
+</kw>
+<arg>Radio=Yes</arg>
+<arg>Mensaje Esperado=You have selected Yes</arg>
+<status status="PASS" start="2025-05-20T20:57:07.489783" elapsed="44.747215"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-20T20:57:52.318624" level="INFO" html="true">&lt;a href="recording_1.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_1.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Radio Button Yes</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-20T20:57:52.242972" elapsed="0.076652"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:57:05.073675" elapsed="47.169297"/>
+</test>
+<test id="s1-t2" name="Test Radio Button Impressive" line="18">
+<msg time="2025-05-20T20:57:54.443107" level="INFO">Automatically setting a fps of 7.0</msg>
+<kw name="Test Radio Button Selection">
+<kw name="Open Browser To Radio Button Page" owner="Locator_radiobuttons">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:57:54.443107" level="INFO">Opening browser 'Chrome' to base url 'https://demoqa.com/radio-button'.</msg>
+<arg>${PAGE_URL}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-20T20:57:54.443107" elapsed="24.025272"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-05-20T20:58:18.468379" elapsed="0.241634"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:58:18.711870" level="INFO">Executing JavaScript:
+document.getElementById("fixedban").remove();
+Without any arguments.</msg>
+<arg>document.getElementById("fixedban").remove();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:58:18.710871" elapsed="0.079169"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:58:18.792062" level="INFO">Executing JavaScript:
+window.scrollTo(0, 200)
+Without any arguments.</msg>
+<arg>window.scrollTo(0, 200)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-20T20:58:18.790040" elapsed="0.075395"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:57:54.443107" elapsed="24.422328"/>
+</kw>
+<kw name="Select Radio Button" owner="keywords_radiobuttons">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-20T20:58:18.871685" level="INFO">Clicking element 'xpath=//*[@id="app"]/div/div/div/div[2]/div[2]/div[3]/label'.</msg>
+<arg>${RADIO_IMPRESSIVE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-20T20:58:18.869673" elapsed="0.253983"/>
+</kw>
+<arg>'${Radio}' == 'Yes'</arg>
+<arg>Click Element</arg>
+<arg>${RADIO_YES}</arg>
+<arg>ELSE IF</arg>
+<arg>'${Radio}' == 'Impressive'</arg>
+<arg>Click Element</arg>
+<arg>${RADIO_IMPRESSIVE}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-05-20T20:58:18.867450" elapsed="0.256206"/>
+</kw>
+<arg>${Radio}</arg>
+<status status="PASS" start="2025-05-20T20:58:18.867450" elapsed="0.257471"/>
+</kw>
+<kw name="Verify Selection Message" owner="keywords_radiobuttons">
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>${RESULT_MESSAGE}</arg>
+<arg>${Mensaje Esperado}</arg>
+<arg>timeout=5s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2025-05-20T20:58:19.125925" elapsed="0.098051"/>
+</kw>
+<arg>${Mensaje Esperado}</arg>
+<status status="PASS" start="2025-05-20T20:58:19.124921" elapsed="0.100053"/>
+</kw>
+<kw name="Take Screenshot" owner="ScreenCapLibrary">
+<msg time="2025-05-20T20:58:19.703217" level="INFO" html="true">&lt;a href="Results/Screenshots/RadioButtons/verified_Impressive.png"&gt;&lt;img src="Results/Screenshots/RadioButtons/verified_Impressive.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>filename=${SCREENSHOT_DIR}/verified_${Radio}.png</arg>
+<doc>Takes a screenshot in the specified format at library import and
+embeds it into the log file (PNG by default).</doc>
+<status status="PASS" start="2025-05-20T20:58:19.225974" elapsed="0.477243"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-05-20T20:58:24.708225" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-05-20T20:58:19.703217" elapsed="5.005008"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-20T20:58:24.710241" elapsed="5.644946"/>
+</kw>
+<arg>Radio=Impressive</arg>
+<arg>Mensaje Esperado=You have selected Impressive</arg>
+<status status="PASS" start="2025-05-20T20:57:54.443107" elapsed="35.912080"/>
+</kw>
+<kw name="Stop Recording Test" owner="AutoRecorder">
+<msg time="2025-05-20T20:58:30.528190" level="INFO" html="true">&lt;a href="recording_2.webm"&gt;&lt;video width="800px" autoplay&gt;&lt;source src="recording_2.webm" type="video/webm"&gt;&lt;/video&gt;&lt;/a&gt;</msg>
+<arg>Test Radio Button Impressive</arg>
+<doc>There is no need to execute this keyword manually.</doc>
+<status status="PASS" start="2025-05-20T20:58:30.357196" elapsed="0.170994"/>
+</kw>
+<status status="PASS" start="2025-05-20T20:57:52.321624" elapsed="38.035572"/>
+</test>
+<doc>Prueba para interactuar con los radio buttons en demoqa.com</doc>
+<status status="PASS" start="2025-05-20T20:57:03.101161" elapsed="87.428544"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Radiobuttons" id="s1" pass="2" fail="0" skip="0">Radiobuttons</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,9 @@
+${Caso};${Expand_Nodes};${Checkboxes};${Esperado_Resultados}
+Caso 1;Documents;WorkSpace;workspace react angular veu
+Caso 2;Desktop;Commands;commands
+Caso 3;Documents;Office;office public private classified general
+Caso 4;;;none
+Caso 5;Downloads;Excel File.doc;excelFile
+Caso 6;Desktop;Notes;notes
+Caso 7;Documents,Downloads;Office,Word File.doc;office public private classified general wordFile
+Caso 8;Documents,Desktop;WorkSpace,Notes;notes workspace react angular veu 
