@@ -1,5 +1,5 @@
 *** Settings ***
-# Documentación de la prueba para interactuar con text box
+# Documentación de la prueba para interactuar con la tabla CRUD
 Documentation    Prueba para interactuar con la tabla web en demoqa.com
 # Importa librerías necesarias
 Library    SeleniumLibrary
@@ -22,7 +22,7 @@ Test Web Table ${Caso}
 Test Web Table Interaction
     [Arguments]      ${Caso}    ${Accion}    ${Parametros}    ${Resultado_Esperado}
     # Abre la página
-    Open Browser To Radio Button Page
+    Open Browser To web table Page
     # Ejecuta la acción según el valor de Acción
     Interact With WebTables    ${Accion}    ${Parametros}    ${Resultado_Esperado}    ${Caso}
     # Pausa para observación 
