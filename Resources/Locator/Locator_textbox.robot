@@ -1,5 +1,5 @@
 *** Variables ***
-# URL de la página de radio buttons
+# URL de la página de text box
 ${PAGE_URL}         https://demoqa.com/text-box
 # Directorio para capturas de pantalla
 ${SCREENSHOT_DIR}   ../../Results/Screenshots/TextBox
@@ -17,7 +17,7 @@ ${RESULT_PERMANENT_ADDRESS}   xpath=//*[@id="output"]/div/p[@id="permanentAddres
 
 *** Keywords ***
 # Abre el navegador y maximiza la ventana
-Open Browser To Radio Button Page
+Open Browser To Radio Text Box Page
     Open Browser    ${PAGE_URL}    Chrome
     Maximize Browser Window
     # Elimina el anuncio inferior 
