@@ -1,4 +1,5 @@
 *** Keywords ***
+# Agregar un nuevo Registro
 Add New Row
   [Arguments]    ${first_name}    ${last_name}    ${age}    ${email}    ${salary}    ${department}
   Click Element    ${ADD_BUTTON}
@@ -10,8 +11,8 @@ Add New Row
   Input Text       ${INPUT_DEPARTMENT}    ${department}
   Click Element    ${SUBMIT_BUTTON}
 
+# Busca una fila en la tabla por nombre y apellido, devolviendo la fila y su índice
 Find Row By Name
-  # Busca una fila en la tabla por nombre y apellido, devolviendo la fila y su índice
   [Arguments]    ${first_name}    ${last_name}
   ${rows}=       Get WebElements       ${TABLE_ROWS}
   ${index}=      Set Variable    1
@@ -28,8 +29,9 @@ Find Row By Name
   END
   Fail    Fila no encontrada
 
+# Edita una fila existente con nuevos datos
 Edit Row
-  # Edita una fila existente con nuevos datos
+  
   [Arguments]    ${target_first_name}  ${target_last_name}  ${new_first_name}  ${new_last_name}  ${new_age}  ${new_email}  ${new_salary}  ${new_department}
   ${row}    ${index}=    Find Row By Name    ${target_first_name}  ${target_last_name}
   Click Element    xpath=//*[@id="edit-record-${index}"]
@@ -41,15 +43,14 @@ Edit Row
   Input Text       ${INPUT_DEPARTMENT}   ${new_department}
   Click Element    ${SUBMIT_BUTTON}
 
+# Elimina una fila de la tabla por nombre y apellido
 Delete Row
-  # Elimina una fila de la tabla por nombre y apellido
   [Arguments]    ${first_name}  ${last_name}
   ${row}    ${index}=    Find Row By Name    ${first_name}  ${last_name}
   Click Element    xpath=//*[@id="delete-record-${index}"]
 
 # Verifica si existe una fila con todos los datos exactamente iguales
 Verify Row Exists
-  # Verifica que exista una fila con los datos exactos proporcionados
   [Arguments]    ${first_name}  ${last_name}  ${age}  ${email}  ${salary}  ${department}
   ${rows}=       Get WebElements       ${TABLE_ROWS}
   ${index}=      Set Variable    1
@@ -66,8 +67,8 @@ Verify Row Exists
   END
   Fail    Fila no encontrada con los datos esperados
 
+# Verifica que una fila no exista en la tabla por nombre y apellido
 Verify Row Does Not Exist
-  # Verifica que una fila no exista en la tabla por nombre y apellido
   [Arguments]    ${first_name}  ${last_name}
   ${rows}=       Get WebElements       ${TABLE_ROWS}
   ${index}=      Set Variable    1
@@ -83,8 +84,8 @@ Verify Row Does Not Exist
     ${index}=    Evaluate    ${index} + 1
   END   
 
+# Realiza una búsqueda en la tabla y verifica que el término esté en alguna celda
 Search Table
-  # Realiza una búsqueda en la tabla y verifica que el término esté en alguna celda
   [Arguments]    ${search_term}
   Input Text     ${SEARCH_BOX}         ${search_term}
   ${rows}=       Get WebElements       ${TABLE_ROWS}
@@ -103,8 +104,8 @@ Search Table
   END
   Fail    No se encontro ninguna fila
 
+# Ejecuta acciones en la tabla según los parámetros y verifica resultados
 Interact With WebTables
-  # Ejecuta acciones en la tabla según los parámetros y verifica resultados
   [Arguments]    ${action}    ${parameters_str}    ${expected_str}    ${caso}
   ${params}=    Run Keyword If    isinstance($parameters_str, list)    Evaluate    ','.join($parameters_str)    ELSE    Set Variable    ${parameters_str}
   ${expected}=    Run Keyword If    isinstance($expected_str, list)    Evaluate    ','.join($expected_str)    ELSE    Set Variable    ${expected_str}
